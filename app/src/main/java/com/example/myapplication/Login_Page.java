@@ -4,6 +4,8 @@ import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,7 +29,13 @@ private ActivityLoginPageBinding binding;
 
 
     }
-
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.login:
+                System.out.println("Login");
+                break;
+        }
+    }
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login_page);

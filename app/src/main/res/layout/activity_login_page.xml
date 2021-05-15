@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CF6A6A">
+    android:background="#BD5555">
 
     <TextView
         android:id="@+id/textView3"
@@ -36,10 +36,10 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="197dp"
-        android:layout_height="40dp"
+        android:layout_width="206dp"
+        android:layout_height="39dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:hint="Password"
         android:imeOptions="actionDone"
@@ -48,6 +48,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="142dp"
+        android:layout_height="63dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="24dp"
+        android:enabled="true"
+        android:text="Login"
+        android:visibility="visible"
+        app:cornerRadius="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -103,10 +120,9 @@
         android:id="@+id/imageView5"
         android:layout_width="84dp"
         android:layout_height="87dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="156dp"
-        app:layout_constraintEnd_toStartOf="@+id/password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/lock_icon_614x460" />
@@ -115,27 +131,9 @@
         android:id="@+id/textView4"
         android:layout_width="271dp"
         android:layout_height="42dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="142dp"
-        android:layout_height="63dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
-        android:enabled="true"
-        android:text="Login"
-        android:visibility="visible"
-        app:backgroundTint="#BA564D"
-        app:cornerRadius="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

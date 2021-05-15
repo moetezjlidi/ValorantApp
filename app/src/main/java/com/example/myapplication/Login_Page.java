@@ -4,6 +4,8 @@ import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.navigation.NavController;
@@ -11,6 +13,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.myapplication.databinding.ActivityLoginPageBinding;
+
+import org.w3c.dom.Text;
 
 public class Login_Page extends AppCompatActivity {
 
@@ -23,19 +27,31 @@ private ActivityLoginPageBinding binding;
 
      binding = ActivityLoginPageBinding.inflate(getLayoutInflater());
      setContentView(binding.getRoot());
+     Button b_login = (Button)  findViewById(R.id.login);
+     b_login.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             TextView result = (TextView) findViewById(R.id.result);
+             TextView user =(TextView)  findViewById(R.id.username);
+             TextView pwd = (TextView) findViewById(R.id.password);
+             if (user.getText().length() == 0 || pwd.getText().length() == 0 ){
+                    result.setText("Please enter a valid username/password !");
+             }
+             else
+             {
+                 //send login request !
+             }
+
+         }
+     });
 
 
 
 
 
     }
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.login:
-                System.out.println("Login");
-                break;
-        }
-    }
+
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login_page);

@@ -61,6 +61,7 @@
         android:text="Login"
         android:visibility="visible"
         app:cornerRadius="200dp"
+        app:backgroundTint="#BA564D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -128,12 +129,18 @@
         app:srcCompat="@drawable/lock_icon_614x460" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/result"
         android:layout_width="271dp"
         android:layout_height="42dp"
+        android:layout_gravity="center"
         android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

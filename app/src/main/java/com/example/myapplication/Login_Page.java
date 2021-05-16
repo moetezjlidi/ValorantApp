@@ -13,6 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.myapplication.databinding.ActivityLoginPageBinding;
+import com.example.myapplication.Login.Auth;
 
 import org.w3c.dom.Text;
 
@@ -39,7 +40,26 @@ private ActivityLoginPageBinding binding;
              }
              else
              {
-                 //send login request !
+
+                 Auth auth = new Auth(user.getText().toString() , pwd.getText().toString());
+                 Thread thread = new Thread(new Runnable() {
+
+                     @Override
+                     public void run() {
+                         try  {
+                             if(auth.login()){
+                                 ((TextView) findViewById(R.id.result)).setText("Logged in");
+                             }
+                             else{
+                                 ((TextView) findViewById(R.id.result)).setText("Invalid Username/Password ! ");
+                             }
+
+                         } catch (Exception e) {
+                             e.printStackTrace();
+                         }
+                     }
+                 });
+                 thread.start();
              }
 
          }

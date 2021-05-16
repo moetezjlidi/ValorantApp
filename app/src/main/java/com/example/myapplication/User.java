@@ -42,11 +42,12 @@ public class User extends AppCompatActivity implements Serializable {
         Intent i = getIntent();
         Auth auth = (Auth) i.getSerializableExtra("auth");
         ImageView card_img = (ImageView) findViewById(R.id.card_img);
+        ImageView rank_img = (ImageView) findViewById(R.id.rank_img);
+        Picasso.get().load("https://raw.githubusercontent.com/RumbleMike/ValorantStreamOverlay/main/Resources/TX_CompetitiveTier_Large_"+auth.getRank_id()+".png").into(rank_img);
         Picasso.get().load(auth.get_Card()).into(card_img);
         TextView name = (TextView) findViewById(R.id.name_id);
-        TextView tag = (TextView) findViewById(R.id.tag_txt) ;
-        name.setText(auth.getName() );
-        tag.setText("#" + auth.getTag());
+        name.setText(auth.getName() + "#" + auth.getTag());
+        ((TextView) findViewById(R.id.rank_name)).setText(auth.getRank() + "/" + auth.getLp() + " Points");
 
 
 

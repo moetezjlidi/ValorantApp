@@ -40,8 +40,34 @@ public class Auth  implements Serializable {
     private String password;
     private String token;
     private String ent_toekn;
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    public String getLp() {
+        return lp;
+    }
+
+    public void setLp(String lp) {
+        this.lp = lp;
+    }
+
+    public String getRank_id() {
+        return rank_id;
+    }
+
+    public void setRank_id(String rank_id) {
+        this.rank_id = rank_id;
+    }
+
     private String rank;
     private String lp;
+    private String rank_id;
 
     public String getName() {
         return name;
@@ -65,7 +91,6 @@ public class Auth  implements Serializable {
     private String uid;
     private String card;
     private String clientPV = "ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9";
-
 
 
     public String get_Card(){
@@ -152,7 +177,17 @@ public class Auth  implements Serializable {
         }
     }
     private void _getRank() {
-        return;
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder().url("https://api.henrikdev.xyz/valorant/v1/mmr/eu/"+this.name+"/"+this.getTag()).build();
+        try(Response response = client.newCall(request).execute()){
+            JSONObject data = new JSONObject(response.body().string());
+            this.rank = data.getJSONObject("data").getString("currenttierpatched");
+            this.lp = data.getJSONObject("data").getString("ranking_in_tier");
+            this.rank_id = data.getJSONObject("data").getString("currenttier");
+            Log.d("Tier" , this.rank_id);
+        } catch (JSONException | IOException e) {
+            e.printStackTrace();
+        }
     }
     public boolean login() {
          CookieManager cookieManager = new CookieManager();
@@ -204,6 +239,7 @@ public class Auth  implements Serializable {
                     this._getCurrentClientVersion();
                     this._getLoadOut();
                     this._getPlayerNameAndTag();
+                    this._getRank();
                     return true;
                 }
 

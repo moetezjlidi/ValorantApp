@@ -1,12 +1,11 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -14,8 +13,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.myapplication.databinding.ActivityLoginPageBinding;
 import com.example.myapplication.Login.Auth;
-
-import org.w3c.dom.Text;
 
 public class Login_Page extends AppCompatActivity {
 
@@ -78,7 +75,7 @@ private ActivityLoginPageBinding binding;
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login_page);
+        NavController navController = Navigation.findNavController(this, R.id.username);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }

@@ -23,6 +23,8 @@ import com.example.myapplication.ui.main.SectionsPagerAdapter;
 import com.example.myapplication.databinding.ActivityUserBinding;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.io.Serializable;
 
 public class User extends AppCompatActivity implements Serializable {
@@ -42,7 +44,10 @@ public class User extends AppCompatActivity implements Serializable {
         ImageView card_img = (ImageView) findViewById(R.id.card_img);
         Picasso.get().load(auth.get_Card()).into(card_img);
         TextView name = (TextView) findViewById(R.id.name_id);
-        name.setText(auth.getName() + "#" + auth.getTag());
+        TextView tag = (TextView) findViewById(R.id.tag_txt) ;
+        name.setText(auth.getName() );
+        tag.setText("#" + auth.getTag());
+
 
 
 

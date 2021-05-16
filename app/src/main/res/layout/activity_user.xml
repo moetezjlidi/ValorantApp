@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/card_img"
-            android:layout_width="114dp"
-            android:layout_height="128dp"
+            android:layout_width="113dp"
+            android:layout_height="133dp"
             android:layout_gravity="left"
             android:layout_marginTop="92dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,27 +26,53 @@
 
         <TextView
             android:id="@+id/name_id"
-            android:layout_width="231dp"
-            android:layout_height="57dp"
+            android:layout_width="117dp"
+            android:layout_height="60dp"
             android:layout_marginTop="92dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintHorizontal_bias="0.105"
+            app:layout_constraintStart_toEndOf="@+id/card_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_id2"
+            android:layout_width="106dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="108dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="#33070"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.917"
             app:layout_constraintStart_toEndOf="@+id/card_img"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/rank_name"
-            android:layout_width="157dp"
-            android:layout_height="57dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="512dp"
+            android:layout_width="155dp"
+            android:layout_height="39dp"
+            android:layout_marginBottom="520dp"
+            android:text="Platinium 3"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.291"
+            app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintStart_toEndOf="@+id/rank_img"
-            app:layout_constraintTop_toTopOf="@+id/name_id" />
+            app:layout_constraintTop_toBottomOf="@+id/name_id"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Switch
             android:id="@+id/switch1"

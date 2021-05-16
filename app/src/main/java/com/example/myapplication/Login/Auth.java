@@ -3,11 +3,14 @@ package com.example.myapplication.Login;
 import android.util.JsonReader;
 import android.util.Log;
 
+import com.example.myapplication.R;
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.URL;
@@ -25,7 +28,8 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class Auth  {
+@SuppressWarnings("serial")
+public class Auth  implements Serializable {
     public static final MediaType JSON
             = MediaType.parse("application/json;charset=utf-8");
     private  String AUTH_URL = "https://auth.riotgames.com/api/v1/authorization";
@@ -41,16 +45,45 @@ public class Auth  {
     private String version;
     private String tag;
     private String uid;
-    private CookieManager cookieManager = new CookieManager();
+    private String card;
+    private String clientPV = "ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9";
 
-    private OkHttpClient client = new OkHttpClient.Builder().cookieJar(new JavaNetCookieJar(cookieManager)).build();
 
+
+    public String get_Card(){
+        return this.card;
+    }
+    private  void _setPlayerCard(String card_id){
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request  request = new Request.Builder().url("https://valorant-api.com/v1/playercards/"+card_id).build();
+        try(Response response = client.newCall(request).execute()){
+            JSONObject data = new JSONObject(response.body().string());
+            this.card = data.getJSONObject("data").getString("displayIcon");
+
+        } catch (JSONException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void _getLoadOut(){
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request =  new Request.Builder().addHeader("Authorization" , "Bearer " + this.token).addHeader("X-Riot-Entitlements-JWT" , this.ent_toekn)
+        .addHeader("X-Riot-ClientVersion" , this.version)
+                .addHeader("X-Riot-ClientPlatform" , this.clientPV).url("https://pd.eu.a.pvp.net/personalization/v2/players/"+this.uid+"/playerloadout/").build();
+        try(Response response = client.newCall(request).execute()){
+            JSONObject data = new JSONObject(response.body().string());
+            this._setPlayerCard(data.getJSONObject("PlayerCard").getString("ID"));
+        } catch (JSONException | IOException e) {
+            e.printStackTrace();
+        }
+    }
     public Auth(String user , String pwd){
         this.user = user;
         this.password = pwd;
-        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+
     }
     private void _getEntToken() throws IOException {
+        OkHttpClient client = new OkHttpClient.Builder().build();
         Request request =  new Request.Builder().addHeader("Authorization" , "Bearer " + this.token).url(this.ENT_TOKEN_URL).post(RequestBody.create("{}" , JSON) ).build();
         try (Response response = client.newCall(request).execute()) {
             this.ent_toekn = new JSONObject(response.body().string()).getString("entitlements_token");
@@ -60,6 +93,7 @@ public class Auth  {
         }
     }
     private void _getUid() throws IOException {
+        OkHttpClient client = new OkHttpClient.Builder().build();
         Request request =  new Request.Builder().addHeader("Authorization" , "Bearer " + this.token).addHeader("X-Riot-Entitlements-JWT" , this.ent_toekn).url(this.USER_INFO_URL).post(RequestBody.create("" , null) ).build();
         try(Response response = client.newCall(request).execute()){
             this.uid = new JSONObject(response.body().string()).getString("sub");
@@ -68,6 +102,7 @@ public class Auth  {
         }
     }
     private void _getCurrentClientVersion(){
+        OkHttpClient client = new OkHttpClient.Builder().build();
         Request request = new Request.Builder().url("https://valorant-api.com/v1/version").build();
         try(Response response = client.newCall(request).execute()){
             String d = response.body().string();
@@ -82,7 +117,9 @@ public class Auth  {
         return;
     }
     public boolean login() {
-
+         CookieManager cookieManager = new CookieManager();
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+       OkHttpClient client = new OkHttpClient.Builder().cookieJar(new JavaNetCookieJar(cookieManager)).build();
 
 
         JSONObject jsonob = new JSONObject();
@@ -127,6 +164,8 @@ public class Auth  {
                     this._getEntToken();
                     this._getUid();
                     this._getCurrentClientVersion();
+                    this._getLoadOut();
+                    Log.d("CARD" , this.card);
                     return true;
                 }
 

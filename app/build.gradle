@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
 }
 
+
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -32,6 +34,8 @@ android {
 }
 
 dependencies {
+//2.71828
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     compile "com.squareup.okhttp3:okhttp:3.0.0"

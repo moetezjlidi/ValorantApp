@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,19 +28,62 @@ import okhttp3.Response;
 public class Auth  {
     public static final MediaType JSON
             = MediaType.parse("application/json;charset=utf-8");
-    private static String AUTH_URL = "https://auth.riotgames.com/api/v1/authorization";
+    private  String AUTH_URL = "https://auth.riotgames.com/api/v1/authorization";
+    private String USER_INFO_URL  = "https://auth.riotgames.com/userinfo";
+    private String ENT_TOKEN_URL = "https://entitlements.auth.riotgames.com/api/token/v1";
     private String user ;
     private String password;
     private String token;
+    private String ent_toekn;
+    private String rank;
+    private String lp;
+    private String name;
+    private String version;
+    private String tag;
+    private String uid;
+    private CookieManager cookieManager = new CookieManager();
+
+    private OkHttpClient client = new OkHttpClient.Builder().cookieJar(new JavaNetCookieJar(cookieManager)).build();
+
     public Auth(String user , String pwd){
         this.user = user;
         this.password = pwd;
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+    }
+    private void _getEntToken() throws IOException {
+        Request request =  new Request.Builder().addHeader("Authorization" , "Bearer " + this.token).url(this.ENT_TOKEN_URL).post(RequestBody.create("{}" , JSON) ).build();
+        try (Response response = client.newCall(request).execute()) {
+            this.ent_toekn = new JSONObject(response.body().string()).getString("entitlements_token");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    private void _getUid() throws IOException {
+        Request request =  new Request.Builder().addHeader("Authorization" , "Bearer " + this.token).addHeader("X-Riot-Entitlements-JWT" , this.ent_toekn).url(this.USER_INFO_URL).post(RequestBody.create("" , null) ).build();
+        try(Response response = client.newCall(request).execute()){
+            this.uid = new JSONObject(response.body().string()).getString("sub");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    private void _getCurrentClientVersion(){
+        Request request = new Request.Builder().url("https://valorant-api.com/v1/version").build();
+        try(Response response = client.newCall(request).execute()){
+            String d = response.body().string();
+            JSONObject data = new JSONObject(d).getJSONObject("data");
+            this.version = MessageFormat.format("{0}-shipping-{1}-{2}", data.getString("branch") , data.getString("buildVersion") , data.getString("version").split("\\.")[3]);
+            Log.d("Version" , this.version);
+        } catch (JSONException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void _getRank() {
+        return;
     }
     public boolean login() {
 
-        CookieManager cookieManager = new CookieManager();
-        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-        OkHttpClient client = new OkHttpClient.Builder().cookieJar(new JavaNetCookieJar(cookieManager)).build();
+
 
         JSONObject jsonob = new JSONObject();
         try {
@@ -75,11 +119,14 @@ public class Auth  {
                     return false;
                 }
                 else{
-                    Pattern pat = Pattern.compile("access_token=(.*?)&token" , Pattern.DOTALL);
+                    Pattern pat = Pattern.compile("access_token=(.*?)&scope" , Pattern.DOTALL);
                     Matcher matcher = pat.matcher(rep);
                     matcher.find();
                     this.token  = matcher.group(1);
                     Log.d("Token" , this.token);
+                    this._getEntToken();
+                    this._getUid();
+                    this._getCurrentClientVersion();
                     return true;
                 }
 

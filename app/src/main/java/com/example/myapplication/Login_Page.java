@@ -46,9 +46,11 @@ private ActivityLoginPageBinding binding;
 
                      @Override
                      public void run() {
+
                          try  {
                              if(auth.login()){
                                  ((TextView) findViewById(R.id.result)).setText("Logged in");
+                                 findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                              }
                              else{
                                  ((TextView) findViewById(R.id.result)).setText("Invalid Username/Password ! ");
@@ -59,7 +61,9 @@ private ActivityLoginPageBinding binding;
                          }
                      }
                  });
+
                  thread.start();
+                 findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
              }
 
          }

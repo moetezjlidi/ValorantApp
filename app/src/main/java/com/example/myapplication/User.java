@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.myapplication.ui.main.SectionsPagerAdapter;
 import com.example.myapplication.databinding.ActivityUserBinding;
@@ -40,6 +41,9 @@ public class User extends AppCompatActivity implements Serializable {
         Auth auth = (Auth) i.getSerializableExtra("auth");
         ImageView card_img = (ImageView) findViewById(R.id.card_img);
         Picasso.get().load(auth.get_Card()).into(card_img);
+        TextView name = (TextView) findViewById(R.id.name_id);
+        name.setText(auth.getName() + "#" + auth.getTag());
+
 
 
 

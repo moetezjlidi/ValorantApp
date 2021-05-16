@@ -6,6 +6,7 @@ import android.util.Log;
 import com.example.myapplication.R;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -41,6 +42,23 @@ public class Auth  implements Serializable {
     private String ent_toekn;
     private String rank;
     private String lp;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     private String name;
     private String version;
     private String tag;
@@ -52,6 +70,26 @@ public class Auth  implements Serializable {
 
     public String get_Card(){
         return this.card;
+    }
+
+    private void _getPlayerNameAndTag() throws JSONException {
+        OkHttpClient client = new OkHttpClient.Builder().build();
+
+        RequestBody body = RequestBody.create("[\""+this.uid+"\"]" ,JSON);
+        Request request = new Request.Builder().addHeader("Content-Type"  ,"application/json")
+                .addHeader("Authorization" , "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT" , this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion" , this.version)
+                .addHeader("X-Riot-ClientPlatform" , this.clientPV)
+                .url("https://pd.eu.a.pvp.net/name-service/v2/players").put(body).build();
+        try(Response response = client.newCall(request).execute()){
+            JSONArray data = new JSONArray(response.body().string());
+            this.name = data.getJSONObject(0).getString("GameName");
+            this.tag = data.getJSONObject(0).getString("TagLine");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private  void _setPlayerCard(String card_id){
         OkHttpClient client = new OkHttpClient.Builder().build();
@@ -165,7 +203,7 @@ public class Auth  implements Serializable {
                     this._getUid();
                     this._getCurrentClientVersion();
                     this._getLoadOut();
-                    Log.d("CARD" , this.card);
+                    this._getPlayerNameAndTag();
                     return true;
                 }
 
@@ -173,6 +211,8 @@ public class Auth  implements Serializable {
 
             }
             catch (IOException e){
+                e.printStackTrace();
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }

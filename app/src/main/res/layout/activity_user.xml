@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/name_id"
             android:layout_width="231dp"
             android:layout_height="57dp"
             android:layout_marginTop="92dp"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/rank_name"
             android:layout_width="157dp"
             android:layout_height="57dp"
             android:layout_marginTop="70dp"
@@ -45,8 +45,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.291"
-            app:layout_constraintStart_toEndOf="@+id/imageView10"
-            app:layout_constraintTop_toTopOf="@+id/textView2" />
+            app:layout_constraintStart_toEndOf="@+id/rank_img"
+            app:layout_constraintTop_toTopOf="@+id/name_id" />
 
         <Switch
             android:id="@+id/switch1"
@@ -112,14 +112,14 @@
         </ScrollView>
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/rank_img"
             android:layout_width="60dp"
             android:layout_height="58dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="12dp"
             app:layout_constraintStart_toEndOf="@+id/card_img"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/name_id" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

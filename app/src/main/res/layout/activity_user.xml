@@ -15,15 +15,16 @@
 
         <TextView
             android:id="@+id/radiant_pt_logo"
-            android:layout_width="49dp"
-            android:layout_height="16dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginRight="28dp"
+            android:layout_width="45dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:text="TextView"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.962" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
@@ -170,15 +171,16 @@
 
         <TextView
             android:id="@+id/valo_pt"
-            android:layout_width="49dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_width="47dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
             android:text="TextView"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintStart_toEndOf="@+id/valo_pt_logo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.962" />
 
         <ImageView
             android:id="@+id/radiant_pt"

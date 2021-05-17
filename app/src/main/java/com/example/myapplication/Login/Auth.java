@@ -41,6 +41,17 @@ public class Auth  implements Serializable {
     private String token;
     private String ent_toekn;
 
+    public String getVal_points() {
+        return val_points;
+    }
+
+    public String getRadiant_points() {
+        return radiant_points;
+    }
+
+    private String val_points;
+    private String radiant_points;
+
     public String getRank() {
         return rank;
     }
@@ -92,7 +103,22 @@ public class Auth  implements Serializable {
     private String card;
     private String clientPV = "ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9";
 
+    private void _getBalance(){
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder().url("https://pd.eu.a.pvp.net/store/v1/wallet/"+this.uid).addHeader("Content-Type"  ,"application/json")
+                .addHeader("Authorization" , "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT" , this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion" , this.version)
+                .addHeader("X-Riot-ClientPlatform" , this.clientPV).build();
+        try(Response response = client.newCall(request).execute()){
+            JSONObject data = new JSONObject(response.body().string()).getJSONObject("Balances");
+            this.val_points = data.getString("85ad13f7-3d1b-5128-9eb2-7cd8ee0b5741");
+            this.radiant_points = data.getString("e59aa87c-4cbf-517a-5983-6e81511be9b7");
 
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+    }
     public String get_Card(){
         return this.card;
     }
@@ -240,6 +266,7 @@ public class Auth  implements Serializable {
                     this._getLoadOut();
                     this._getPlayerNameAndTag();
                     this._getRank();
+                    this._getBalance();
                     return true;
                 }
 

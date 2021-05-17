@@ -55,6 +55,9 @@ public class User extends AppCompatActivity implements Serializable {
         ProgressBar pbar =  ((ProgressBar) findViewById(R.id.rank_bar));
         pbar.setProgress(Integer.parseInt(auth.getLp()));
         ((TextView) findViewById(R.id.lp_txt)).setText(auth.getLp() + "/100");
+        ((TextView) findViewById(R.id.valo_pt)).setText(auth.getVal_points());
+        ((TextView) findViewById(R.id.radiant_pt_logo)).setText(auth.getRadiant_points());
+
 
 
 

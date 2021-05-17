@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,11 +13,13 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.myapplication.ui.main.SectionsPagerAdapter;
@@ -31,6 +34,7 @@ public class User extends AppCompatActivity implements Serializable {
 
     private ActivityUserBinding binding;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +50,11 @@ public class User extends AppCompatActivity implements Serializable {
         Picasso.get().load("https://raw.githubusercontent.com/RumbleMike/ValorantStreamOverlay/main/Resources/TX_CompetitiveTier_Large_"+auth.getRank_id()+".png").into(rank_img);
         Picasso.get().load(auth.get_Card()).into(card_img);
         TextView name = (TextView) findViewById(R.id.name_id);
-        name.setText(auth.getName() + "#" + auth.getTag());
-        ((TextView) findViewById(R.id.rank_name)).setText(auth.getRank() + "/" + auth.getLp() + " Points");
+        name.setText(Html.fromHtml("<b>" +auth.getName() + "</b>" +  "#" + auth.getTag()) );
+        ((TextView) findViewById(R.id.rank_name)).setText(auth.getRank());
+        ProgressBar pbar =  ((ProgressBar) findViewById(R.id.rank_bar));
+        pbar.setProgress(Integer.parseInt(auth.getLp()));
+        ((TextView) findViewById(R.id.lp_txt)).setText(auth.getLp() + "/100");
 
 
 

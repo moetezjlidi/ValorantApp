@@ -71,12 +71,33 @@
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.562"
                 app:layout_constraintStart_toEndOf="@+id/card_img"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/rank_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="191dp"
+                android:layout_height="17dp"
+                android:layout_marginEnd="76dp"
+                android:layout_marginRight="76dp"
+                android:max="100"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/lp_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginRight="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Switch

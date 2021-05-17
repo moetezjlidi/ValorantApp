@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.myapplication.ui.main.SectionsPagerAdapter;
@@ -30,13 +31,21 @@ import org.w3c.dom.Text;
 
 import java.io.Serializable;
 
-public class User extends AppCompatActivity implements Serializable {
+public class User extends AppCompatActivity  {
 
     private ActivityUserBinding binding;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         super.onCreate(savedInstanceState);
 
         binding = ActivityUserBinding.inflate(getLayoutInflater());
@@ -57,6 +66,13 @@ public class User extends AppCompatActivity implements Serializable {
         ((TextView) findViewById(R.id.lp_txt)).setText(auth.getLp() + "/100");
         ((TextView) findViewById(R.id.valo_pt)).setText(auth.getVal_points());
         ((TextView) findViewById(R.id.radiant_pt_logo)).setText(auth.getRadiant_points());
+        Switch sw = (Switch) findViewById(R.id.switch1);
+        sw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
 
@@ -65,4 +81,5 @@ public class User extends AppCompatActivity implements Serializable {
 
 
     }
+
 }

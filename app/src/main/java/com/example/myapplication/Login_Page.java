@@ -27,6 +27,7 @@ private ActivityLoginPageBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         binding = ActivityLoginPageBinding.inflate(getLayoutInflater());

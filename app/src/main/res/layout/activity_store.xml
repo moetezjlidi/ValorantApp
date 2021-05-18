@@ -199,14 +199,10 @@
                         android:id="@+id/time_bundle"
                         android:layout_width="122dp"
                         android:layout_height="30dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="56dp"
                         android:text="TextView"
 
                         app:layout_constraintEnd_toStartOf="@+id/bundleimg"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
@@ -225,25 +221,19 @@
                         android:id="@+id/bundlename"
                         android:layout_width="122dp"
                         android:layout_height="30dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
                         android:text="TextView"
 
                         app:layout_constraintEnd_toStartOf="@+id/bundleimg"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/price_bundle"
                         android:layout_width="56dp"
                         android:layout_height="21dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         android:text="TextView"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logo1"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.506" />
 
@@ -251,10 +241,8 @@
                         android:id="@+id/logo1"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/price_bundle"
+                        app:layout_constraintStart_toEndOf="@+id/bundleimg"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/valorant" />
 
@@ -269,6 +257,7 @@
                         android:layout_width="194dp"
                         android:layout_height="40dp"
                         android:text="OFFERS"
+                        android:gravity="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.592"
                         app:layout_constraintStart_toStartOf="parent"
@@ -284,6 +273,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/offers"
+                        android:gravity="center"
                         app:layout_constraintVertical_bias="0.0" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -310,24 +300,18 @@
                         android:id="@+id/offer1_name"
                         android:layout_width="122dp"
                         android:layout_height="30dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
                         android:text="TextView"
                         app:layout_constraintEnd_toStartOf="@+id/offer1_img"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/offer1_price"
                         android:layout_width="56dp"
                         android:layout_height="21dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         android:text="TextView"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logo2"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.506" />
 
@@ -335,11 +319,10 @@
                         android:id="@+id/logo2"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:layout_marginEnd="12dp"
-                        android:layout_marginRight="12dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/offer1_price"
+                        app:layout_constraintStart_toEndOf="@+id/offer1_img"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.488"
                         app:srcCompat="@drawable/valorant" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -366,25 +349,20 @@
                         android:id="@+id/offer2_name"
                         android:layout_width="122dp"
                         android:layout_height="30dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="6dp"
                         android:layout_marginRight="6dp"
                         android:text="TextView"
                         app:layout_constraintEnd_toStartOf="@+id/offer2_img"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/offer2_price"
                         android:layout_width="56dp"
                         android:layout_height="21dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         android:text="TextView"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logo3"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.506" />
 
@@ -392,10 +370,8 @@
                         android:id="@+id/logo3"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/offer2_price"
+                        app:layout_constraintStart_toEndOf="@+id/offer2_img"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/valorant" />
 
@@ -423,24 +399,18 @@
                         android:id="@+id/offer3_name"
                         android:layout_width="122dp"
                         android:layout_height="30dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
                         android:text="TextView"
                         app:layout_constraintEnd_toStartOf="@+id/offer3_img"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/offer3_price"
                         android:layout_width="56dp"
                         android:layout_height="21dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         android:text="TextView"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logo4"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.506" />
 
@@ -448,10 +418,8 @@
                         android:id="@+id/logo4"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/offer3_price"
+                        app:layout_constraintStart_toEndOf="@+id/offer3_img"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/valorant" />
 
@@ -479,24 +447,18 @@
                         android:id="@+id/offer4_name"
                         android:layout_width="122dp"
                         android:layout_height="30dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
                         android:text="TextView"
                         app:layout_constraintEnd_toStartOf="@+id/offer4_img"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/offer4_price"
                         android:layout_width="56dp"
                         android:layout_height="21dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         android:text="TextView"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView14"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.506" />
 
@@ -504,10 +466,8 @@
                         android:id="@+id/imageView14"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/offer4_price"
+                        app:layout_constraintStart_toEndOf="@+id/offer4_img"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/valorant" />
 

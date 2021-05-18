@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#BD5555"
     android:foregroundGravity="center"
-    tools:context=".User">
+    tools:context=".Store">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"

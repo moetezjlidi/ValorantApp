@@ -167,7 +167,7 @@
                     tools:visibility="visible" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/btn_store"
                     android:layout_width="338dp"
                     android:layout_height="94dp"
                     android:layout_gravity="center"

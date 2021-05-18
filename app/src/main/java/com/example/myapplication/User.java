@@ -6,30 +6,19 @@ import android.os.Bundle;
 
 
 import com.example.myapplication.Login.Auth;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
 
-import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Html;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.example.myapplication.ui.main.SectionsPagerAdapter;
 import com.example.myapplication.databinding.ActivityUserBinding;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
-
-import java.io.Serializable;
 
 public class User extends AppCompatActivity  {
 
@@ -51,7 +40,7 @@ public class User extends AppCompatActivity  {
         binding = ActivityUserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+
         Intent i = getIntent();
         Auth auth = (Auth) i.getSerializableExtra("auth");
         ImageView card_img = (ImageView) findViewById(R.id.card_img);
@@ -71,6 +60,14 @@ public class User extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        ((Button) findViewById(R.id.btn_store)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  i = new Intent(User.this ,Store.class);
+                i.putExtra("auth" , auth);
+                User.this.startActivity(i);
             }
         });
 

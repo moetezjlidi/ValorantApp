@@ -2,7 +2,15 @@ plugins {
     id 'com.android.application'
 }
 
+android {
+    buildFeatures {
+        viewBinding = true
+    }
 
+    buildFeatures {
+        dataBinding = true
+    }
+}
 
 android {
     compileSdkVersion 30

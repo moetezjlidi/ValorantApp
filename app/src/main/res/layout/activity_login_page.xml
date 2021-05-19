@@ -88,6 +88,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="47dp"
@@ -127,5 +128,33 @@
         app:layout_constraintTop_toBottomOf="@+id/password"
         tools:visibility="visible" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/GenericProgressBackground"
+        android:id="@+id/loadingPanel"
+        tools:ignore="MissingConstraints">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/GenericProgressIndicator"
+            app:layout_constraintBottom_toTopOf="@+id/result2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.827" />
+
+        <TextView
+            android:id="@+id/result2"
+            android:layout_width="329dp"
+            android:layout_height="229dp"
+            android:layout_marginBottom="104dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

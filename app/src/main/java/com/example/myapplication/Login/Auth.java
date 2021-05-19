@@ -382,7 +382,7 @@ public class Auth  implements Serializable {
             if (data.length() == 0){
                 this.rank_id = "0";
                 this.lp = "0";
-                this.rank = "Unrakned";
+                this.rank = "Unranked";
             }
             else{
                 JSONObject lastmatch = data.getJSONObject(0);
@@ -394,7 +394,7 @@ public class Auth  implements Serializable {
                 else {
                     this.rank_id = "0";
                     this.lp = "0";
-                    this.rank = "Unrakned";
+                    this.rank = "Unranked";
                 }
             }
 

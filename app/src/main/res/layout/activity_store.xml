@@ -309,16 +309,19 @@
 
                     <TextView
                         android:id="@+id/offer1_name"
-                        android:layout_width="122dp"
-                        android:layout_height="30dp"
+                        android:layout_width="105dp"
+                        android:layout_height="40dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="70dp"
                         android:text="TextView"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/offer1_img"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.802" />
 
                     <TextView
                         android:id="@+id/offer1_price"
@@ -364,17 +367,24 @@
 
                     <TextView
                         android:id="@+id/offer2_name"
-                        android:layout_width="122dp"
-                        android:layout_height="30dp"
+                        android:layout_width="105dp"
+                        android:layout_height="40dp"
 
-                        android:layout_marginTop="70dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
                         android:text="TextView"
+                        android:inputType="textMultiLine"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/offer2_img"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.802"
+                        />
 
                     <TextView
                         android:id="@+id/offer2_price"
@@ -421,17 +431,21 @@
 
                     <TextView
                         android:id="@+id/offer3_name"
-                        android:layout_width="122dp"
-                        android:layout_height="30dp"
+                        android:layout_width="105dp"
+                        android:layout_height="40dp"
 
-                        android:layout_marginTop="70dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="TextView"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
-                        android:text="TextView"
+                        app:layout_constraintEnd_toStartOf="@+id/offer3_img"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.802"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
 
                     <TextView
                         android:id="@+id/offer3_price"
@@ -498,15 +512,19 @@
 
                     <TextView
                         android:id="@+id/offer4_name"
-                        android:layout_width="122dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="70dp"
+                        android:layout_width="105dp"
+                        android:layout_height="40dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="TextView"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
-                        android:text="TextView"
+                        app:layout_constraintEnd_toStartOf="@+id/offer4_img"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintVertical_bias="0.802"
                         app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

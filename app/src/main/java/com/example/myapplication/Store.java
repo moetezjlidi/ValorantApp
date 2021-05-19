@@ -103,6 +103,23 @@ public class Store extends AppCompatActivity {
             }
         };
         cdt.start();
+        CountDownTimer cdtf = new CountDownTimer(auth.getFeatured_timer() * 1000  , 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                long seconds = millisUntilFinished / 1000;
+                long minutes = seconds / 60;
+                long hours = minutes / 60;
+                long days = hours / 24;
+                String time = twoDigitString(days) + ":" + twoDigitString(hours % 24) + ":" + twoDigitString(minutes % 60) + ":" + twoDigitString(seconds % 60);
+                ((TextView) findViewById(R.id.bundle_timer)).setText(time);
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        cdtf.start();
 
         //
         //

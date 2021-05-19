@@ -48,6 +48,12 @@ public class Auth extends AppCompatActivity implements Serializable {
     private ArrayList<Store_item> items;
     private String allskins;
 
+    public Long getFeatured_timer() {
+        return featured_timer;
+    }
+
+    private Long featured_timer;
+
     public long getItem_time_left() {
         return item_time_left;
     }
@@ -232,6 +238,7 @@ public class Auth extends AppCompatActivity implements Serializable {
             this._getBundle(bundle.getJSONObject("Bundle").getString("DataAssetID"));
             JSONArray myskins = data.getJSONObject("SkinsPanelLayout").getJSONArray("SingleItemOffers");
             this.item_time_left = data.getJSONObject("SkinsPanelLayout").getLong("SingleItemOffersRemainingDurationInSeconds");
+            this.featured_timer = bundle.getLong("BundleRemainingDurationInSeconds");
             Log.d("Skins", myskins.toString());
             for (int i = 0; i < myskins.length(); i++) {
                 this._addToStore(myskins.getString(i));

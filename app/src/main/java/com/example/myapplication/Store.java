@@ -44,8 +44,7 @@ public class Store extends AppCompatActivity {
         Picasso.get().load(auth.getItems().get(2).getImg_url()).into((ImageView) findViewById(R.id.offer3_img));
         Picasso.get().load(auth.getItems().get(3).getImg_url()).into((ImageView) findViewById(R.id.offer4_img));
         ((TextView) findViewById(R.id.bundlename)).setText(auth.getBundle().getSkin_name());
-        //((TextView) findViewById(R.id.offer1_name)).setText(auth.getItems().get(0).getSkin_name());
-        ((TextView) findViewById(R.id.offer1_name)).setText("Gravitational Uranium Neuroblaster spectere");
+        ((TextView) findViewById(R.id.offer1_name)).setText(auth.getItems().get(0).getSkin_name());
         ((TextView) findViewById(R.id.offer2_name)).setText(auth.getItems().get(1).getSkin_name());
         ((TextView) findViewById(R.id.offer3_name)).setText(auth.getItems().get(2).getSkin_name());
         ((TextView) findViewById(R.id.offer4_name)).setText(auth.getItems().get(3).getSkin_name());
@@ -55,9 +54,9 @@ public class Store extends AppCompatActivity {
         ((TextView) findViewById(R.id.offer3_price)).setText(auth.getItems().get(2).getSkin_price());
         ((TextView) findViewById(R.id.offer4_price)).setText(auth.getItems().get(3).getSkin_price());
         ((ConstraintLayout) findViewById(R.id.offer_1)).setBackgroundColor(Color.parseColor("#"+ auth.getItems().get(0).getSkin_type().substring(0 , 6)));
-        ((ConstraintLayout) findViewById(R.id.offer2)).setBackgroundColor(Color.parseColor("#"+auth.getItems().get(1).getSkin_type().substring(0 , 6)));
-        ((ConstraintLayout) findViewById(R.id.offer3)).setBackgroundColor(Color.parseColor("#"+auth.getItems().get(2).getSkin_type().substring(0 , 6)));
-        ((ConstraintLayout) findViewById(R.id.offer4)).setBackgroundColor(Color.parseColor("#"+auth.getItems().get(3).getSkin_type().substring(0 , 6)));
+        ((ConstraintLayout) findViewById(R.id.offer_2)).setBackgroundColor(Color.parseColor("#"+auth.getItems().get(1).getSkin_type().substring(0 , 6)));
+        ((ConstraintLayout) findViewById(R.id.offer_3)).setBackgroundColor(Color.parseColor("#"+auth.getItems().get(2).getSkin_type().substring(0 , 6)));
+        ((ConstraintLayout) findViewById(R.id.offer_4)).setBackgroundColor(Color.parseColor("#"+auth.getItems().get(3).getSkin_type().substring(0 , 6)));
 
 
         //

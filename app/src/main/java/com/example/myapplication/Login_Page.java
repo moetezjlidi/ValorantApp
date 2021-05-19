@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -46,17 +47,20 @@ private ActivityLoginPageBinding binding;
              {
 
                  Auth auth = new Auth(user.getText().toString() , pwd.getText().toString());
+                Thread t =  new Thread(new Runnable() {
+                     public void run() {
+                         if (auth.login()) {
+                             ((TextView) findViewById(R.id.result)).setText("logged in!");
+                             Intent i = new Intent(Login_Page.this, User.class);
+                             i.putExtra("auth", auth);
+                             Login_Page.this.startActivity(i);
 
-                             if(auth.login()){
-                                 ((TextView) findViewById(R.id.result)).setText("logged in!");
-                                 Intent  i = new Intent(Login_Page.this , User.class);
-                                 i.putExtra("auth" , auth);
-                                 Login_Page.this.startActivity(i);
-
-                             }
-                             else{
-                                 ((TextView) findViewById(R.id.result)).setText("Invalid Username/Password ! ");
-                             }
+                         } else {
+                             ((TextView) findViewById(R.id.result)).setText("Invalid Username/Password ! ");
+                         }
+                     }
+                 });
+                t.start();
 
 
 

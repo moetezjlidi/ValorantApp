@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,15 +17,15 @@
         <TextView
             android:id="@+id/radiant_pt_logo"
             android:layout_width="49dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
             android:text="TextView"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintStart_toEndOf="@+id/radiant_pt"
-            android:textColor="#FFFFFF"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.954" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
@@ -117,6 +116,7 @@
                 android:textColor="#FFFFFF"
                 app:layout_constraintStart_toEndOf="@+id/rank_bar"
                 app:layout_constraintTop_toBottomOf="@+id/rank_name" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Switch
@@ -131,41 +131,29 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageView
-            android:id="@+id/valo_pt_logo"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="204dp"
-            android:layout_marginLeft="204dp"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/valorant" />
-
         <TextView
             android:id="@+id/valo_pt"
-            android:layout_width="49dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_width="50dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="132dp"
+            android:layout_marginLeft="132dp"
             android:text="TextView"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-            app:layout_constraintStart_toEndOf="@+id/valo_pt_logo"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.954" />
 
         <ImageView
             android:id="@+id/radiant_pt"
-            android:layout_width="14dp"
+            android:layout_width="16dp"
             android:layout_height="15dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintStart_toEndOf="@+id/valo_pt"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.955"
             app:srcCompat="@drawable/valorant_radianite_points" />
 
         <TextView
@@ -173,6 +161,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="17dp"
             android:text="Store"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/scrollView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -182,6 +174,9 @@
             android:layout_width="381dp"
             android:layout_height="345dp"
             android:layout_marginBottom="64dp"
+            android:background="#9E3841"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdgeLength="50dp"
 
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -197,8 +192,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/bundle"
-                    android:layout_width="360dp"
-                    android:layout_height="70dp"
+                    android:layout_width="365dp"
+                    android:layout_height="172dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="30px"
@@ -207,46 +202,50 @@
                     app:layout_constraintStart_toStartOf="parent">
 
                     <TextView
-                        android:id="@+id/bundle_price"
-                        android:layout_width="62dp"
-                        android:layout_height="30dp"
-                        android:layout_marginBottom="16dp"
+                        android:id="@+id/bundle_timer"
+                        android:layout_width="109dp"
+                        android:layout_height="23dp"
+                        android:layout_marginBottom="8dp"
                         android:text="TextView"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#ECD48D"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/logo1" />
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
                     <TextView
                         android:id="@+id/bundlename"
-                        android:layout_width="92dp"
-                        android:layout_height="29dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
+                        android:layout_width="90dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
                         android:layout_marginTop="4dp"
-                        android:text="oni phantom"
+                        android:text="Collec name"
+                        android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/logo1"
-                        android:layout_width="20dp"
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="87dp"
                         android:layout_height="17dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:text="COLLECTION"
+                        android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.777"
-                        app:srcCompat="@drawable/valorant"
-                        tools:layout_editor_absoluteX="275dp" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bundlename"
+                        app:layout_constraintVertical_bias="0.0" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="30px">
+                    android:layout_marginBottom="30px"
+                    android:background="#1D3043">
 
                     <TextView
                         android:id="@+id/offers"
@@ -269,7 +268,7 @@
                         android:layout_marginRight="88dp"
                         android:gravity="center"
                         android:text="TextView"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#ECD48D"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -308,6 +307,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
                         android:text="oni phantom"
+                        android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -319,12 +319,13 @@
                     <TextView
                         android:id="@+id/offer1_price"
                         android:layout_width="62dp"
-                        android:layout_height="30dp"
-                        android:layout_marginBottom="60dp"
+                        android:layout_height="24dp"
+                        android:layout_marginBottom="68dp"
                         android:text="TextView"
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@+id/logo2" />
 
                     <ImageView
@@ -334,7 +335,7 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer1_img"
-                        app:srcCompat="@drawable/valorant" />
+                        app:srcCompat="@drawable/displayicon" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -367,6 +368,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
                         android:text="oni phantom"
+                        android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -378,8 +380,8 @@
                     <TextView
                         android:id="@+id/offer2_price"
                         android:layout_width="62dp"
-                        android:layout_height="30dp"
-                        android:layout_marginBottom="60dp"
+                        android:layout_height="24dp"
+                        android:layout_marginBottom="68dp"
                         android:text="TextView"
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -392,9 +394,10 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer2_img"
-                        app:srcCompat="@drawable/valorant" />
+                        app:srcCompat="@drawable/displayicon" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/offer_3"
                     android:layout_width="match_parent"
@@ -424,6 +427,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
                         android:text="oni phantom"
+                        android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -432,16 +436,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/offer3_price"
-                        android:layout_width="62dp"
-                        android:layout_height="30dp"
-                        android:layout_marginBottom="60dp"
-                        android:text="TextView"
-                        android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logo4" />
-
                     <ImageView
                         android:id="@+id/logo4"
                         android:layout_width="20dp"
@@ -449,9 +443,20 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer3_img"
-                        app:srcCompat="@drawable/valorant" />
+                        app:srcCompat="@drawable/displayicon" />
+
+                    <TextView
+                        android:id="@+id/offer3_price"
+                        android:layout_width="62dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintStart_toEndOf="@+id/logo4"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/offer_4"
                     android:layout_width="match_parent"
@@ -481,6 +486,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
                         android:text="oni phantom"
+                        android:textAllCaps="true"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -492,8 +498,8 @@
                     <TextView
                         android:id="@+id/offer4_price"
                         android:layout_width="62dp"
-                        android:layout_height="30dp"
-                        android:layout_marginBottom="60dp"
+                        android:layout_height="24dp"
+                        android:layout_marginBottom="68dp"
                         android:text="TextView"
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -506,7 +512,7 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer4_img"
-                        app:srcCompat="@drawable/valorant" />
+                        app:srcCompat="@drawable/displayicon" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -514,13 +520,28 @@
             </LinearLayout>
         </ScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="16dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+            app:layout_constraintEnd_toStartOf="@+id/valo_pt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.955"
+            app:srcCompat="@drawable/displayicon" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="346dp"
-        android:layout_height="77dp"
-        android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/_200px_valorant_logo_svg" />
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="330dp"
+            android:layout_height="75dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/valorant_logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

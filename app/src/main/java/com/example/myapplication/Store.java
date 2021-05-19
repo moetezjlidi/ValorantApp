@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.example.myapplication.Login.Auth;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -68,6 +70,7 @@ public class Store extends AppCompatActivity {
         Picasso.get().load(auth.getItems().get(2).getImg_url()).into((ImageView) findViewById(R.id.offer3_img));
         Picasso.get().load(auth.getItems().get(3).getImg_url()).into((ImageView) findViewById(R.id.offer4_img));
         ((TextView) findViewById(R.id.bundlename)).setText(auth.getBundle().getSkin_name());
+
         ((TextView) findViewById(R.id.offer1_name)).setText(auth.getItems().get(0).getSkin_name());
         ((TextView) findViewById(R.id.offer2_name)).setText(auth.getItems().get(1).getSkin_name());
         ((TextView) findViewById(R.id.offer3_name)).setText(auth.getItems().get(2).getSkin_name());

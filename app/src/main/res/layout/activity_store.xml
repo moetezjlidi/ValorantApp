@@ -197,8 +197,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/bundle"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="360dp"
+                    android:layout_height="70dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="30px"
@@ -206,20 +206,11 @@
 
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <ImageView
-                        android:id="@+id/bundleimg"
-                        android:layout_width="363dp"
-                        android:layout_height="89dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars" />
-
                     <TextView
                         android:id="@+id/bundle_price"
                         android:layout_width="62dp"
                         android:layout_height="30dp"
                         android:layout_marginBottom="16dp"
-                        android:background="drawble/bundleimg"
                         android:text="TextView"
                         android:textColor="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -244,13 +235,11 @@
                         android:id="@+id/logo1"
                         android:layout_width="20dp"
                         android:layout_height="17dp"
-                        android:layout_marginEnd="68dp"
-                        android:layout_marginRight="68dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/bundleimg"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.777"
-                        app:srcCompat="@drawable/valorant" />
+                        app:srcCompat="@drawable/valorant"
+                        tools:layout_editor_absoluteX="275dp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

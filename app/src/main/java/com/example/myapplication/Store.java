@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Html;
@@ -16,6 +19,9 @@ import android.widget.TextView;
 import com.example.myapplication.Login.Auth;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class Store extends AppCompatActivity {
@@ -43,12 +49,20 @@ public class Store extends AppCompatActivity {
             auth.updateStore();
         }
 
-        ImageView featured = findViewById(R.id.bundleimg);
+
         ((ImageView) findViewById(R.id.offer1_img)).setRotation(35);
         ((ImageView) findViewById(R.id.offer2_img)).setRotation(35);
         ((ImageView) findViewById(R.id.offer3_img)).setRotation(35);
         ((ImageView) findViewById(R.id.offer4_img)).setRotation(35);
-        Picasso.get().load(auth.getBundle().getImg_url()).into(featured);
+
+        try {
+            Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(auth.getBundle().getImg_url()).getContent());
+            BitmapDrawable background = new BitmapDrawable(bitmap);
+            ((ConstraintLayout)findViewById(R.id.bundle)).setBackground(background);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         Picasso.get().load(auth.getItems().get(0).getImg_url()).into((ImageView) findViewById(R.id.offer1_img));
         Picasso.get().load(auth.getItems().get(1).getImg_url()).into((ImageView) findViewById(R.id.offer2_img));
         Picasso.get().load(auth.getItems().get(2).getImg_url()).into((ImageView) findViewById(R.id.offer3_img));

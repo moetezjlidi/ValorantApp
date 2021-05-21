@@ -45,6 +45,8 @@ private ActivityLoginPageBinding binding;
              TextView result2 = (TextView) findViewById(R.id.result2);
              TextView user =(TextView)  findViewById(R.id.username);
              TextView pwd = (TextView) findViewById(R.id.password);
+             result.setText("");
+             result2.setText("");
              if (user.getText().length() == 0 || pwd.getText().length() == 0 ){
                     result.setText("Please enter a valid username/password !");
              }

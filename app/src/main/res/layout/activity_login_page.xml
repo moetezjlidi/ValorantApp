@@ -12,7 +12,7 @@
         android:id="@+id/background"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.3"
+        android:alpha="0.8"
         android:scaleType="fitXY"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +44,7 @@
         android:layout_height="61dp"
         android:layout_marginTop="212dp"
         android:text="SIGN IN"
+        android:textColor="@android:color/white"
         android:textSize="34sp"
         android:gravity="center"
         android:textStyle="bold"

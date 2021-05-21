@@ -118,6 +118,7 @@
             android:background="@android:color/transparent"
             android:gravity="center"
             android:hint="Username"
+            android:textColorHint="@android:color/white"
             android:textColor="@android:color/white"
             app:boxBackgroundColor="@android:color/transparent" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -141,6 +142,7 @@
             android:layout_height="66dp"
             android:layout_gravity="center"
             android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
             android:background="@android:color/transparent"
             android:gravity="center"
             android:hint="Password"
@@ -151,8 +153,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loadingPanel"
         style="@style/GenericProgressBackground"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="411dp"
+        android:layout_height="731dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="1dp">
 

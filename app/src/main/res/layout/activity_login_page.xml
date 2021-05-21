@@ -12,7 +12,7 @@
         android:id="@+id/background"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.8"
+        android:alpha="0.9"
         android:scaleType="fitXY"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:alpha="0.5"
+        android:alpha="0.7"
         app:srcCompat="@drawable/_280px_valorant_logo___pink_color_version_svg" />
 
 
@@ -71,16 +71,15 @@
         android:id="@+id/imageView2"
         android:layout_width="53dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-
-        android:layout_marginTop="32dp"
 
 
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/valorant" />
 
     <ImageView
@@ -88,34 +87,38 @@
         android:layout_width="50dp"
         android:layout_height="49dp"
 
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="268dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
-        app:layout_constraintHorizontal_bias="0.6"
+
+        app:layout_constraintHorizontal_bias="0.709"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
         app:srcCompat="@drawable/shield_lock_2238639_1922694_removebg_preview" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         android:layout_width="220dp"
         android:layout_height="80dp"
-        android:layout_marginTop="288dp"
         android:background="@android:color/transparent"
+
         app:boxBackgroundColor="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949">
 
         <com.google.android.material.textfield.TextInputEditText
 
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="66dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:gravity="center"
             android:hint="Username"
+            android:textColor="@android:color/white"
             app:boxBackgroundColor="@android:color/transparent" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,6 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:layout_gravity="center"
+            android:textColor="@android:color/white"
             android:background="@android:color/transparent"
             android:gravity="center"
             android:hint="Password"
@@ -145,9 +149,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/GenericProgressBackground"
         android:id="@+id/loadingPanel"
-        tools:ignore="MissingConstraints">
+        style="@style/GenericProgressBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="1dp">
 
         <ProgressBar
             android:id="@+id/progressBar"

@@ -51,25 +51,26 @@
             android:id="@+id/radiant_pt"
             android:layout_width="16dp"
             android:layout_height="15dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintStart_toEndOf="@+id/valo_pt"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.955"
+            app:layout_constraintVertical_bias="0.952"
             app:srcCompat="@drawable/valorant_radianite_points" />
+
         <TextView
             android:id="@+id/radiant_pt_logo"
             android:layout_width="49dp"
             android:layout_height="18dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:text="TextView"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintStart_toEndOf="@+id/radiant_pt"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.954" />
+            app:layout_constraintVertical_bias="0.95" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
@@ -179,14 +180,16 @@
 
         <ScrollView
             android:id="@+id/scrollView2"
-            android:layout_width="368dp"
-            android:layout_height="289dp"
+            android:layout_width="365dp"
+            android:layout_height="349dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginBottom="156dp"
+            android:layout_marginBottom="88dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintHorizontal_bias="0.586"
+            app:layout_constraintStart_toStartOf="parent"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdgeLength="50dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -198,10 +201,33 @@
                     android:layout_width="331dp"
                     android:layout_height="92dp"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/valfont"
                     android:text="Match History"
-                    android:fontFamily="@font/valfont"
                     android:visibility="visible"
+                    app:backgroundTint="#1D3043"
+                    app:cornerRadius="200dp"
+                    tools:visibility="visible" />
+
+                <Button
+                    android:id="@+id/button_collec"
+                    android:layout_width="331dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/valfont"
+                    android:text="Collection"
+                    android:visibility="visible"
+                    app:backgroundTint="#1D3043"
+                    app:cornerRadius="200dp"
+                    tools:visibility="visible" />
+
+                <Button
+                    android:id="@+id/button_battle"
+                    android:layout_width="331dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/valfont"
+                    android:text="BattlePass"
+                    android:visibility="visible"
                     app:backgroundTint="#1D3043"
                     app:cornerRadius="200dp"
                     tools:visibility="visible" />
@@ -211,6 +237,7 @@
                     android:layout_width="334dp"
                     android:layout_height="95dp"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/valfont"
                     android:text="Agents"
                     android:textColor="#FFFFFF"
                     android:visibility="visible"
@@ -223,8 +250,9 @@
                     android:layout_width="338dp"
                     android:layout_height="94dp"
                     android:layout_gravity="center"
-                    android:text="Store"
                     android:fontFamily="@font/valfont"
+
+                    android:text="Store"
                     android:visibility="visible"
                     app:backgroundTint="#1D3043"
                     app:cornerRadius="200dp"

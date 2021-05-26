@@ -7,6 +7,7 @@
     android:background="#BD5555"
     android:foregroundGravity="center"
     tools:context=".User">
+
     <ImageView
         android:id="@+id/background"
         android:layout_width="fill_parent"
@@ -168,6 +169,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/valfont"
         android:text="Disconnect"
         android:textColor="#FFFFFF"
         android:visibility="visible"
@@ -176,22 +178,33 @@
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="402dp"
+        android:layout_height="152dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="276dp"
         app:fillColor="#FFFFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
 
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.09"
         app:pageColor="#00000000"
         app:radius="6dp"
         app:slideInterval="3000"
         app:strokeColor="#FF777777"
         app:strokeWidth="1dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="400dp"
+        android:layout_height="216dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -199,7 +199,9 @@
                     android:layout_height="92dp"
                     android:layout_gravity="center"
                     android:text="Match History"
+                    android:fontFamily="@font/valfont"
                     android:visibility="visible"
+                    android:fontFamily="@font/valfont"
                     app:backgroundTint="#1D3043"
                     app:cornerRadius="200dp"
                     tools:visibility="visible" />
@@ -222,6 +224,7 @@
                     android:layout_height="94dp"
                     android:layout_gravity="center"
                     android:text="Store"
+                    android:fontFamily="@font/valfont"
                     android:visibility="visible"
                     app:backgroundTint="#1D3043"
                     app:cornerRadius="200dp"

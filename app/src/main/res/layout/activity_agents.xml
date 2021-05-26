@@ -77,8 +77,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752">
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageView
@@ -179,14 +178,16 @@
         android:id="@+id/carouselView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="276dp"
         app:fillColor="#FFFFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:pageColor="#00000000"
         app:radius="6dp"
         app:slideInterval="3000"

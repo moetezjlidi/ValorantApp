@@ -42,8 +42,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="164dp"
-        android:layout_height="61dp"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
         android:layout_marginTop="180dp"
         android:gravity="center"
         android:text="SIGN IN"
@@ -103,6 +103,7 @@
         android:background="@android:color/transparent"
 
         app:boxBackgroundColor="@android:color/transparent"
+        app:boxBackgroundMode="filled"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"

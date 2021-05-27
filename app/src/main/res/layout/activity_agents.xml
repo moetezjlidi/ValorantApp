@@ -20,6 +20,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background" />
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="330dp"
+        android:layout_height="75dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/valorant_logo" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -75,13 +84,14 @@
         android:id="@+id/constraintLayout4"
         android:layout_width="389dp"
         android:layout_height="163dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="116dp"
         android:background="#1D3043"
 
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752">
 
 
         <ImageView
@@ -181,16 +191,18 @@
 
     <com.denzcoskun.imageslider.ImageSlider
 
-        android:layout_width="402dp"
-        android:layout_height="152dp"
+        android:id="@+id/slider"
+        android:layout_width="400dp"
+        android:layout_height="141dp"
         android:layout_marginTop="8dp"
         app:fillColor="#FFFFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
 
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/slider"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="0.0">
 
 
     </com.denzcoskun.imageslider.ImageSlider>
@@ -200,7 +212,8 @@
         android:layout_width="407dp"
         android:layout_height="250dp"
         android:layout_marginBottom="40dp"
-        android:background="#709FC8"
+        android:background="#1D3043"
+        android:alpha="0.95"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -219,7 +232,7 @@
             android:textColorHint="#FFFFFF"
             android:textSize="6sp"
             android:visibility="visible"
-            app:backgroundTint="#1D3043"
+            app:backgroundTint="#BD5555"
             app:cornerRadius="200dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -243,7 +256,9 @@
             android:layout_width="103dp"
             android:layout_height="33dp"
             android:layout_marginBottom="188dp"
+            android:capitalize="sentences"
             android:text="TextView"
+            android:textAllCaps="true"
             android:textColor="#ECD48D"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -373,6 +388,17 @@
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/ownership"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
+            android:text="ownership"
+            android:textColor="#4CAF50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

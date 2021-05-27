@@ -47,7 +47,8 @@ public class agents extends AppCompatActivity {
             public void onItemChanged(int i) {
                 try {
                     JSONObject d = new JSONObject(data.get(i)).getJSONObject("data");
-
+                    ((TextView)findViewById(R.id.agent_name)).setText(d.getString("displayName"));
+                    Picasso.get().load(d.getString("bustPortrait")).into((ImageView) findViewById(R.id.agent_portrait));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

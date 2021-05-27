@@ -208,11 +208,11 @@
         <Button
             android:id="@+id/button"
             android:layout_width="73dp"
-            android:layout_height="45dp"
+            android:layout_height="44dp"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
             android:fontFamily="@font/valfont"
             android:text="VIEW CONTRACT"
             android:textColor="#FFFFFF"
@@ -240,22 +240,20 @@
 
         <TextView
             android:id="@+id/agent_name"
-            android:layout_width="122dp"
-            android:layout_height="38dp"
-            android:layout_marginEnd="80dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginBottom="180dp"
+            android:layout_width="103dp"
+            android:layout_height="33dp"
+            android:layout_marginBottom="188dp"
             android:text="TextView"
             android:textColor="#ECD48D"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/button" />
 
         <ImageButton
-            android:id="@+id/info_agent"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:id="@+id/ab1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@null"
@@ -267,23 +265,23 @@
             tools:srcCompat="@drawable/displayicon1" />
 
         <ImageButton
-            android:id="@+id/ab1"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:id="@+id/info_agent"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@null"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/info_agent"
+            app:layout_constraintEnd_toStartOf="@+id/ab1"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.35"
+            app:layout_constraintVertical_bias="0.346"
             tools:srcCompat="@drawable/displayicon1" />
 
         <ImageButton
             android:id="@+id/ab2"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@null"
@@ -296,8 +294,8 @@
 
         <ImageButton
             android:id="@+id/ab3"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@null"
@@ -310,25 +308,23 @@
 
         <ImageButton
             android:id="@+id/ulti"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
             android:background="@null"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.345"
+            app:layout_constraintVertical_bias="0.346"
             tools:srcCompat="@drawable/displayicon1" />
 
         <TextView
             android:id="@+id/agent_role"
-            android:layout_width="107dp"
-            android:layout_height="20dp"
+            android:layout_width="103dp"
+            android:layout_height="19dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             android:text="TextView"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toStartOf="@+id/button"
@@ -350,10 +346,10 @@
 
         <TextView
             android:id="@+id/ab_desc"
-            android:layout_width="196dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
+            android:layout_width="174dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
             android:lines="4"
             android:maxLines="4"
             android:text="TextView"
@@ -364,10 +360,10 @@
 
         <TextView
             android:id="@+id/info_desc"
-            android:layout_width="187dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
+            android:layout_width="166dp"
+            android:layout_height="61dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
             android:layout_marginBottom="8dp"
             android:lines="5"
             android:maxLines="5"

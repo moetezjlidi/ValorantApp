@@ -20,6 +20,7 @@ import java.net.URL;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -48,6 +49,51 @@ public class Auth extends AppCompatActivity implements Serializable {
     private ArrayList<Store_item> items;
     private String allskins;
 
+    public int getAgentsLength() {
+        return agentsLength;
+    }
+
+    public void setAgentsLength(int agentsLength) {
+        this.agentsLength = agentsLength;
+    }
+
+    public ArrayList<String> getAgentsSplash() {
+        return agentsSplash;
+    }
+
+    public void setAgentsSplash(ArrayList<String> agentsSplash) {
+        this.agentsSplash = agentsSplash;
+    }
+
+    private int agentsLength;
+    private  ArrayList<String>  agentsSplash  = new ArrayList<String>();
+    public void getAgents(){
+        String url = "https://pd.eu.a.pvp.net/store/v1/entitlements/"+this.uid+"/01bb38e1-da47-4e6a-9b3d-945fe4655707";
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder().url(url).addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
+        try (Response response = client.newCall(request).execute()) {
+            JSONArray agents = new JSONObject(response.body().string()).getJSONArray("Entitlements");
+            agentsLength =  5 + agents.length();
+            for (int i = 0; i<agents.length();i++){
+                OkHttpClient client1 = new OkHttpClient.Builder().build();
+                Request request1 = new Request.Builder().url("https://valorant-api.com/v1/agents/"+ agents.getJSONObject(i).getString("ItemID")).build();
+                try(Response rep = client1.newCall(request1).execute()){
+                        this.agentsSplash.add(rep.body().string());
+
+                }catch (IOException  e){
+                    e.printStackTrace();
+                }
+
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
     public Long getFeatured_timer() {
         return featured_timer;
     }

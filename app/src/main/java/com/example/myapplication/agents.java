@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -49,6 +50,12 @@ public class agents extends AppCompatActivity {
                     JSONObject d = new JSONObject(data.get(i)).getJSONObject("data");
                     ((TextView)findViewById(R.id.agent_name)).setText(d.getString("displayName"));
                     Picasso.get().load(d.getString("bustPortrait")).into((ImageView) findViewById(R.id.agent_portrait));
+
+                    Picasso.get().load(d.getJSONObject("role").getString("displayIcon")).into((ImageView) findViewById(R.id.info_agent));
+                    Picasso.get().load(d.getJSONArray("abilities").getJSONObject(0).getString("displayIcon")).into((ImageButton)findViewById(R.id.ab1));
+                    Picasso.get().load(d.getJSONArray("abilities").getJSONObject(1).getString("displayIcon")).into((ImageButton)findViewById(R.id.ab2));
+                    Picasso.get().load(d.getJSONArray("abilities").getJSONObject(2).getString("displayIcon")).into((ImageButton)findViewById(R.id.ab3));
+                    Picasso.get().load(d.getJSONArray("abilities").getJSONObject(3).getString("displayIcon")).into((ImageButton)findViewById(R.id.ulti));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

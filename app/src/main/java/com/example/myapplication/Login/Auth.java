@@ -49,6 +49,16 @@ public class Auth extends AppCompatActivity implements Serializable {
     private ArrayList<Store_item> items;
     private String allskins;
 
+    public ArrayList<String> getMyagents() {
+        return myagents;
+    }
+
+    public void setMyagents(ArrayList<String> myagents) {
+        this.myagents = myagents;
+    }
+
+    private ArrayList<String> myagents = new ArrayList<String>();
+
     public int getAgentsLength() {
         return agentsLength;
     }
@@ -79,16 +89,21 @@ public class Auth extends AppCompatActivity implements Serializable {
             JSONArray agents = new JSONObject(response.body().string()).getJSONArray("Entitlements");
             agentsLength =  5 + agents.length();
             for (int i = 0; i<agents.length();i++){
-                OkHttpClient client1 = new OkHttpClient.Builder().build();
-                Request request1 = new Request.Builder().url("https://valorant-api.com/v1/agents/"+ agents.getJSONObject(i).getString("ItemID")).build();
-                try(Response rep = client1.newCall(request1).execute()){
-                        this.agentsSplash.add(rep.body().string());
-
-                }catch (IOException  e){
-                    e.printStackTrace();
-                }
+                myagents.add(agents.getJSONObject(i).getString("ItemID"));
 
             }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        Request request1 = new Request.Builder().url("https://valorant-api.com/v1/agents").build();
+        try (Response rep = client.newCall(request1).execute()){
+            JSONArray d = new JSONObject(rep.body().string()).getJSONArray("data");
+            for(int i = 0 ; i < d.length();i++){
+                if (!d.getJSONObject(i).getString("uuid").equals("ded3520f-4264-bfed-162d-b080e2abccf9")) {
+                    agentsSplash.add(d.getJSONObject(i).toString());
+                }
+            }
+
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }

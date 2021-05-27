@@ -47,14 +47,14 @@ public class agents extends AppCompatActivity {
             public void onItemChanged(int i) {
                 try {
                     JSONObject d = new JSONObject(data.get(i)).getJSONObject("data");
-                    ((TextView)findViewById(R.id.textView3)).setText(d.getString("displayName"));
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
             }
         });
-        slider.st
+
 
 
 

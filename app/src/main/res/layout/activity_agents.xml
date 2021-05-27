@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:alpha="0.95"
     android:background="#BD5555"
     android:foregroundGravity="center"
     tools:context=".User">
@@ -31,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.955"
         app:srcCompat="@drawable/displayicon" />
+
     <TextView
         android:id="@+id/valo_pt"
         android:layout_width="50dp"
@@ -55,6 +57,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.955"
         app:srcCompat="@drawable/valorant_radianite_points" />
+
     <TextView
         android:id="@+id/radiant_pt_logo"
         android:layout_width="49dp"
@@ -177,8 +180,13 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.denzcoskun.imageslider.ImageSlider
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+
+        android:layout_width="402dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="8dp"
+        app:fillColor="#FFFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/slider"
@@ -189,25 +197,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="400dp"
-        android:layout_height="216dp"
-        android:layout_marginBottom="88dp"
+        android:layout_width="407dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="52dp"
+        android:alpha="1"
+        android:background="#709FC8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

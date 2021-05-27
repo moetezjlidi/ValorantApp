@@ -175,28 +175,15 @@
             app:layout_constraintStart_toEndOf="@+id/rank_bar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/valfont"
-        android:text="Disconnect"
-        android:textColor="#FFFFFF"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <com.denzcoskun.imageslider.ImageSlider
 
         android:id="@+id/slider"
         android:layout_width="400dp"
         android:layout_height="141dp"
         android:layout_marginTop="8dp"
-        app:fillColor="#FFFFFFFF"
+        android:background="#1D3043"
 
+        app:fillColor="#FFFFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -258,9 +245,9 @@
             android:layout_marginBottom="188dp"
             android:capitalize="sentences"
             android:text="TextView"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textColor="#ECD48D"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button" />

@@ -1133,8 +1133,8 @@
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="119dp"
-            android:layout_height="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="48dp"
             android:fontFamily="@font/valfont"
             android:text="Preround Spray"
@@ -1148,8 +1148,8 @@
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="122dp"
-            android:layout_height="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="44dp"
             android:fontFamily="@font/valfont"
             android:text="Midround Spray"

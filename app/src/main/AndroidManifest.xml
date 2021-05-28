@@ -13,17 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity android:name=".Collection"></activity>
         <activity
             android:name=".agents"
-            android:theme="@style/Theme.MyApplication.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.MyApplication.NoActionBar"></activity>
         <activity
             android:name=".Store"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity
             android:name=".User"
-            android:theme="@style/Theme.MyApplication.NoActionBar"
-            />
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity
             android:name=".Login_Page"
             android:label="@string/title_activity_login_page"

@@ -165,6 +165,11 @@ public class Auth extends AppCompatActivity implements Serializable {
         this.lp = lp;
     }
 
+    public String getPlayer_title() {
+        return player_title;
+    }
+
+    private String player_title;
     public String getRank_id() {
         return rank_id;
     }
@@ -381,6 +386,10 @@ public class Auth extends AppCompatActivity implements Serializable {
             JSONObject data = new JSONObject(response.body().string());
             this.mycollection  = data.toString();
             this._setPlayerCard(data.getJSONObject("PlayerCard").getString("ID"));
+            Request req = new Request.Builder().url("https://valorant-api.com/v1/playertitles/"+ data.getJSONObject("PlayerTitle").getString("ID")).build();
+            try (Response rep  = client.newCall(req).execute()){
+                this.player_title = new JSONObject(rep.body().string()).getJSONObject("data").getString("titleText");
+            }
         } catch (JSONException | IOException e) {
             e.printStackTrace();
         }

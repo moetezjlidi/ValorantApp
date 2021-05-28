@@ -80,7 +80,14 @@ public class User extends AppCompatActivity  {
             }
         });
 
-
+        ((Button)findViewById(R.id.button_collec)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i  = new Intent(User.this , Collection.class);
+                i.putExtra("auth" , auth);
+                User.this.startActivity(i);
+            }
+        });
 
 
 

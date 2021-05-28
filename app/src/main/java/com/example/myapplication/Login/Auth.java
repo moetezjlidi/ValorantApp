@@ -49,6 +49,12 @@ public class Auth extends AppCompatActivity implements Serializable {
     private ArrayList<Store_item> items;
     private String allskins;
 
+    public String getMycollection() {
+        return mycollection;
+    }
+
+    private String mycollection;
+
     public ArrayList<String> getMyagents() {
         return myagents;
     }
@@ -373,6 +379,7 @@ public class Auth extends AppCompatActivity implements Serializable {
                 .addHeader("X-Riot-ClientPlatform", this.clientPV).url("https://pd.eu.a.pvp.net/personalization/v2/players/" + this.uid + "/playerloadout/").build();
         try (Response response = client.newCall(request).execute()) {
             JSONObject data = new JSONObject(response.body().string());
+            this.mycollection  = data.toString();
             this._setPlayerCard(data.getJSONObject("PlayerCard").getString("ID"));
         } catch (JSONException | IOException e) {
             e.printStackTrace();

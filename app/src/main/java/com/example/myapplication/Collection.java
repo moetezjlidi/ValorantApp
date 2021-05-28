@@ -53,9 +53,9 @@ public class Collection extends AppCompatActivity {
             ((TextView)findViewById(R.id.username_collec)).setText(auth.getName());
             JSONObject data = new JSONObject(auth.getMycollection());
             Picasso.get().load(CARD_URL + data.getJSONObject("PlayerCard").getString("ID") + "/largeart.png" ).into((ImageView) findViewById(R.id.agent_card));
-            Picasso.get().load(SPRAY_URL + data.getJSONArray("Sprays").getJSONObject(2).getString("SprayID")+"/displayicon.png").into((ImageView)findViewById(R.id.tag1));
-            Picasso.get().load(SPRAY_URL + data.getJSONArray("Sprays").getJSONObject(0).getString("SprayID")+"/displayicon.png").into((ImageView)findViewById(R.id.tag2));
-            Picasso.get().load(SPRAY_URL + data.getJSONArray("Sprays").getJSONObject(1).getString("SprayID")+"/displayicon.png").into((ImageView)findViewById(R.id.tag3));
+            Picasso.get().load(SPRAY_URL + data.getJSONArray("Sprays").getJSONObject(1).getString("SprayID")+"/displayicon.png").into((ImageView)findViewById(R.id.tag1));
+            Picasso.get().load(SPRAY_URL + data.getJSONArray("Sprays").getJSONObject(2).getString("SprayID")+"/displayicon.png").into((ImageView)findViewById(R.id.tag2));
+            Picasso.get().load(SPRAY_URL + data.getJSONArray("Sprays").getJSONObject(0).getString("SprayID")+"/displayicon.png").into((ImageView)findViewById(R.id.tag3));
 
             //CLASSIC
             JSONObject classic = data.getJSONArray("Guns").getJSONObject(8);

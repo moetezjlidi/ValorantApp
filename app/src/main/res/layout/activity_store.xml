@@ -193,7 +193,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/bundle"
-                    android:layout_width="360dp"
+                    android:layout_width="371dp"
                     android:layout_height="173dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
@@ -206,7 +206,9 @@
                         android:id="@+id/bundle_timer"
                         android:layout_width="109dp"
                         android:layout_height="23dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="16dp"
                         android:text="TextView"
                         android:textColor="#ECD48D"
                         android:textStyle="bold"

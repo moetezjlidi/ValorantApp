@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import android.content.Intent;
 import android.graphics.Color;
@@ -27,6 +29,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class agents extends AppCompatActivity {
  public int current = 0;
@@ -192,6 +195,23 @@ public class agents extends AppCompatActivity {
         ((TextView) findViewById(R.id.lp_txt)).setText(auth.getLp() + "/100");
         ((TextView) findViewById(R.id.valo_pt)).setText(auth.getVal_points());
         ((TextView) findViewById(R.id.radiant_pt_logo)).setText(auth.getRadiant_points());
+        ((Button)findViewById(R.id.view_contract)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ((ConstraintLayout)findViewById(R.id.contract)).setVisibility(View.VISIBLE);
+                ((ConstraintLayout)findViewById(R.id.all_stuff)).setAlpha((float) 0.5);
+                ((ConstraintLayout)findViewById(R.id.all_constraint)).setBackgroundColor(Color.parseColor("#6C6767"));
+            }
+        });
+        ((ImageButton)findViewById(R.id.close_c)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ConstraintLayout)findViewById(R.id.contract)).setVisibility(View.GONE);
+                ((ConstraintLayout)findViewById(R.id.all_stuff)).setAlpha((float) 1);
+                ((ConstraintLayout)findViewById(R.id.all_constraint)).setBackgroundColor(Color.parseColor("#BD5555"));
+            }
+        });
 
 
 

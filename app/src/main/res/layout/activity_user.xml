@@ -199,7 +199,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/view_contract"
                     android:layout_width="331dp"
                     android:layout_height="92dp"
                     android:layout_gravity="center"

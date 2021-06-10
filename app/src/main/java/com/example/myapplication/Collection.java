@@ -70,7 +70,7 @@ public class Collection extends AppCompatActivity {
                     Picasso.get().load(SPRAY_URL + sprays.getJSONObject(j).getString("SprayID")+"/displayicon.png").into((ImageView)findViewById(R.id.tag3));
                 }
             }
-            Picasso.get().load(CARD_URL + data.getJSONObject("PlayerCard").getString("ID") + "/largeart.png" ).into((ImageView) findViewById(R.id.agent_card));
+            Picasso.get().load(CARD_URL + data.getJSONObject("Identity").getString("PlayerCardID") + "/largeart.png" ).into((ImageView) findViewById(R.id.agent_card));
             //CLASSIC
             this.UpdateWeapon(8 , data , R.id.classic_img  , R.id.buddy_classic);
 
@@ -106,7 +106,7 @@ public class Collection extends AppCompatActivity {
             //ARES
             this.UpdateWeapon(1 , data , R.id.ares , R.id.ares_buddy);
             //ODIN
-            this.UpdateWeapon(0 , data , R.id.odin_pic , R.id.odin_pic);
+            this.UpdateWeapon(0 , data , R.id.odin_pic , R.id.odin_buddy);
             //KNIFE
             this.UpdateWeapon(17 , data , R.id.knife , R.id.knife_buddy);
         } catch (JSONException e) {

@@ -18,7 +18,10 @@ import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.URL;
 import java.text.MessageFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -48,6 +51,17 @@ public class Auth extends AppCompatActivity implements Serializable {
     private String ent_toekn;
     private ArrayList<Store_item> items;
     private String allskins;
+
+    public String getAll_contracts() {
+        return all_contracts;
+    }
+
+    public String getMycontracts() {
+        return mycontracts;
+    }
+
+    private String all_contracts;
+    private String mycontracts;
 
     public String getMycollection() {
         return mycollection;
@@ -81,8 +95,34 @@ public class Auth extends AppCompatActivity implements Serializable {
         this.agentsSplash = agentsSplash;
     }
 
+
     private int agentsLength;
     private  ArrayList<String>  agentsSplash  = new ArrayList<String>();
+    public void GetContracts(){
+        //https://pd.eu.a.pvp.net/contract-definitions/v2/definitions
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder().url("https://pd.eu.a.pvp.net/contract-definitions/v2/definitions").addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
+        try (Response response = client.newCall(request).execute()) {
+            this.all_contracts = response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Request request1 = new Request.Builder().url("https://pd.eu.a.pvp.net/contracts/v1/contracts/"+this.uid).addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
+        try (Response rep = client.newCall(request1).execute()){
+            this.mycontracts = rep.body().string();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void getAgents(){
         String url = "https://pd.eu.a.pvp.net/store/v1/entitlements/"+this.uid+"/01bb38e1-da47-4e6a-9b3d-945fe4655707";
         OkHttpClient client = new OkHttpClient.Builder().build();
@@ -179,7 +219,7 @@ public class Auth extends AppCompatActivity implements Serializable {
     }
 
     private String rank;
-    private String lp;
+    private String lp = "0";
     private String rank_id;
 
     public String getName() {
@@ -385,8 +425,9 @@ public class Auth extends AppCompatActivity implements Serializable {
         try (Response response = client.newCall(request).execute()) {
             JSONObject data = new JSONObject(response.body().string());
             this.mycollection  = data.toString();
-            this._setPlayerCard(data.getJSONObject("PlayerCard").getString("ID"));
-            Request req = new Request.Builder().url("https://valorant-api.com/v1/playertitles/"+ data.getJSONObject("PlayerTitle").getString("ID")).build();
+            Log.d("LOADOUT" , data.toString());
+            this._setPlayerCard(data.getJSONObject("Identity").getString("PlayerCardID"));
+            Request req = new Request.Builder().url("https://valorant-api.com/v1/playertitles/"+ data.getJSONObject("Identity").getString("PlayerTitleID")).build();
             try (Response rep  = client.newCall(req).execute()){
                 this.player_title = new JSONObject(rep.body().string()).getJSONObject("data").getString("titleText");
             }
@@ -448,12 +489,22 @@ public class Auth extends AppCompatActivity implements Serializable {
         Request request = new Request.Builder().url("https://valorant-api.com/v1/seasons").build();
         try (Response response = client.newCall(request).execute()) {
             JSONArray seasons = new JSONObject(response.body().string()).getJSONArray("data");
+            for(int i =0;i<seasons.length();i++){
+                JSONObject season = seasons.getJSONObject(i);
+                if ((!new SimpleDateFormat("yyyy-MM-DD").parse(season.getString("endTime").replace("T00:00:00Z" , "")).before(new Date())) && (new SimpleDateFormat("yyyy-MM-DD").parse(season.getString("startTime").replace("T00:00:00Z" , "")).before(new Date()))){
+                    if (season.getString("type").equals("EAresSeasonType::Act")) {
+                        result = season.getString("uuid");
+                        break;
+                    }
+                }
+            }
             JSONObject last_season = seasons.getJSONObject(seasons.length() - 1);
-            result = last_season.getString("uuid");
-        } catch (JSONException | IOException e) {
+
+        } catch (JSONException | IOException | ParseException e) {
             e.printStackTrace();
         }
-        return result;
+        Log.d("Season" , result);
+        return "52e9749a-429b-7060-99fe-4595426a0cf7";
     }
 
     public void _getRank() {
@@ -491,10 +542,12 @@ public class Auth extends AppCompatActivity implements Serializable {
                 .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
         try (Response response = client.newCall(request).execute()) {
             JSONArray data = new JSONObject(response.body().string()).getJSONArray("Matches");
+            Log.d("Rank"  , data.toString());
             if (data.length() == 0) {
                 this.rank_id = "0";
                 this.lp = "0";
                 this.rank = "Unranked";
+                Log.d("Error" , "NIK OMEK CHFAMA2");
             } else {
                 JSONObject lastmatch = data.getJSONObject(0);
                 if (lastmatch.getString("SeasonID").equals(this._getCurrentSeason())) {
@@ -505,12 +558,14 @@ public class Auth extends AppCompatActivity implements Serializable {
                     this.rank_id = "0";
                     this.lp = "0";
                     this.rank = "Unranked";
+
+                    Log.d("Error" , "NIK OMEK CHFAMA1");
                 }
             }
 
 
         } catch (JSONException | IOException e) {
-            e.printStackTrace();
+            Log.d("Error" , "NIK OMEK CHFAMA");
         }
     }
 

@@ -23,37 +23,51 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
 
-                android:background="@drawable/main_header">
+
+                >
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/listviewicon"
+                    android:src="@drawable/win_header"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="99dp"
+                    android:layout_height="42dp"
+                    android:layout_marginEnd="144dp"
+                    android:layout_marginRight="144dp"
+                    android:gravity="center"
+
                     android:text="13 - 7"
                     android:textColor="#FFFFFF"
+                    android:textSize="34sp"
                     android:textStyle="italic"
-                    tools:layout_editor_absoluteX="188dp"
-                    tools:layout_editor_absoluteY="41dp" />
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="60dp"
-                    android:layout_height="52dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/reyna" />
+                    app:layout_constraintVertical_bias="0.275" />
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="60dp"
-                    android:layout_height="52dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="80dp"
+                    android:layout_height="89dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView9"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/tx_competitivetier_large_17" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView9"
+                    app:layout_constraintVertical_bias="0.463"
+                    app:srcCompat="@drawable/reyna" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

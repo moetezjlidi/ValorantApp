@@ -29,6 +29,129 @@
                 >
 
                 <ImageView
+                    android:id="@+id/match1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/listviewicon"
+                    android:src="@drawable/draw_header"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/score2"
+                    android:layout_width="100dp"
+                    android:layout_height="22dp"
+
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="13 - 13"
+                    android:textAllCaps="false"
+                    android:textColor="#F4F1E5"
+                    android:textSize="16sp"
+
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toTopOf="@+id/kda1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/agent2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+
+
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/match1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/reyna" />
+
+                <ImageView
+                    android:id="@+id/rank2"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/agent2"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/tx_competitivetier_large_17" />
+
+                <TextView
+                    android:id="@+id/rating2"
+                    android:layout_width="27dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="+1"
+                    android:textAllCaps="false"
+                    android:textColor="#F4F1E5"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/agent2"
+                    app:layout_constraintTop_toBottomOf="@+id/rank2"
+                    app:layout_constraintVertical_bias="0.157" />
+
+                <TextView
+                    android:id="@+id/draw"
+
+                    android:layout_width="81dp"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:text="DRAW"
+                    android:textColor="#DDBF64"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/score2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/score3"
+                    android:layout_width="100dp"
+                    android:layout_height="13dp"
+                    android:layout_marginEnd="147dp"
+                    android:layout_marginRight="147dp"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center"
+                    android:text="SCORE : 0,000"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/kda1"
+                    android:layout_width="100dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="144dp"
+                    android:layout_marginLeft="144dp"
+                    android:autoText="false"
+                    android:gravity="center"
+                    android:text="KDA : 00/00/00"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/score3"
+                    app:layout_constraintStart_toStartOf="@+id/match1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                >
+
+                <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -36,37 +159,230 @@
                     android:src="@drawable/win_header"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="99dp"
-                    android:layout_height="42dp"
-                    android:layout_marginEnd="144dp"
-                    android:layout_marginRight="144dp"
-                    android:gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="22dp"
 
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
                     android:text="13 - 7"
-                    android:textColor="#FFFFFF"
-                    android:textSize="34sp"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textAllCaps="false"
+                    android:textColor="#198C08"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toTopOf="@+id/textView16"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.275" />
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="80dp"
-                    android:layout_height="89dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:scaleType="fitXY"
-                    app:layout_constraintBottom_toTopOf="@+id/imageView9"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView9"
-                    app:layout_constraintVertical_bias="0.463"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+
+
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView9"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@drawable/reyna" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/tx_competitivetier_large_17" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="27dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="+19"
+                    android:textAllCaps="false"
+                    android:textColor="#198C08"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                    app:layout_constraintVertical_bias="0.157" />
+
+                <TextView
+                    android:id="@+id/textView13"
+
+                    android:layout_width="82dp"
+                    android:layout_height="22dp"
+                    android:gravity="center"
+                    android:text="VICTORY"
+                    android:textColor="#DDBF64"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="100dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="144dp"
+                    android:layout_marginLeft="144dp"
+                    android:autoText="false"
+                    android:gravity="center"
+                    android:text="KDA : 00/00/00"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textView17"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="100dp"
+                    android:layout_height="13dp"
+                    android:layout_marginEnd="147dp"
+                    android:layout_marginRight="147dp"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center"
+                    android:text="SCORE : 0,000"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/match"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/listviewicon"
+                    android:src="@drawable/lose_header"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/score1"
+                    android:layout_width="100dp"
+                    android:layout_height="22dp"
+
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="7 - 13"
+                    android:textAllCaps="false"
+                    android:textColor="#9F1006"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toTopOf="@+id/kda"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/agent1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+
+
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/match"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/reyna" />
+
+                <ImageView
+                    android:id="@+id/rank1"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/agent1"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/tx_competitivetier_large_17" />
+
+                <TextView
+                    android:id="@+id/rating1"
+                    android:layout_width="27dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="-19"
+                    android:textAllCaps="false"
+                    android:textColor="#9F1006"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/agent1"
+                    app:layout_constraintTop_toBottomOf="@+id/rank1"
+                    app:layout_constraintVertical_bias="0.157" />
+
+                <TextView
+                    android:id="@+id/defeat"
+
+                    android:layout_width="82dp"
+                    android:layout_height="22dp"
+                    android:gravity="center"
+                    android:text="DEFEAT"
+                    android:textColor="#DDBF64"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/score1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/kda"
+                    android:layout_width="100dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="144dp"
+                    android:layout_marginLeft="144dp"
+                    android:autoText="false"
+                    android:gravity="center"
+                    android:text="KDA : 00/00/00"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/score4"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/score4"
+                    android:layout_width="100dp"
+                    android:layout_height="13dp"
+                    android:layout_marginEnd="147dp"
+                    android:layout_marginRight="147dp"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center"
+                    android:text="SCORE : 0,000"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

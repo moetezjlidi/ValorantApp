@@ -85,7 +85,11 @@ public class matches extends AppCompatActivity{
                     String result = "";
                     String myteam = "";
                     String enemyteam = "";
+                    boolean demoted = Integer.parseInt(tiera) < Integer.parseInt(tierb);
+                    boolean promoted = Integer.parseInt(tiera) > Integer.parseInt(tierb);
+
                     String team = "";
+                    String maxscore = "0";
                     for (int k = 0; k < players.length(); k++) {
                         if (players.getJSONObject(k).getString("subject").equals(auth.getUid())) {
                             JSONObject stats = players.getJSONObject(k).getJSONObject("stats");
@@ -93,9 +97,34 @@ public class matches extends AppCompatActivity{
                             kda = stats.getString("kills") + "/" + stats.getString("deaths") + "/" + stats.getString("assists");
                             agent = players.getJSONObject(k).getString("characterId");
                             team = players.getJSONObject(k).getString("teamId");
-                            break;
+                                break;
+                        }
+
+                    }
+                    boolean matchmvp = true;
+                    boolean teammvp = true;
+                    for (int k = 0;k<players.length();k++){
+                        JSONObject stats = players.getJSONObject(k).getJSONObject("stats");
+                        if (players.getJSONObject(k).getString("teamId").equals(team)){
+                            //same Team so check for team mvp
+                            if (teammvp){
+                                if (Integer.parseInt(stats.getString("score")) > Integer.parseInt(score)){
+                                    teammvp = false;
+                                    matchmvp = false;
+                                    break;
+                                }
+                            }
+                        }
+                        else{
+
+                                if (matchmvp){
+                                    if (Integer.parseInt(stats.getString("score")) > Integer.parseInt(score)){
+                                        matchmvp = false;
+                                }
+                            }
                         }
                     }
+
                     // check if player won the game or no
                     JSONArray teams = info.getJSONArray("teams");
                     if (teams.getJSONObject(0).getString("teamId").equals(team)) {
@@ -126,10 +155,28 @@ public class matches extends AppCompatActivity{
                     //check if won
                     if (result.equals("win")) {
                         v = mlf.inflate(R.layout.win_match_layout, null);
+                        if (promoted){
+                            v.findViewById(R.id.promoted).setVisibility(View.VISIBLE);
+                        }
                     } else if (result.equals("lose")) {
                         v = mlf.inflate(R.layout.lose_match_layout, null);
+                        if (demoted){
+                            v.findViewById(R.id.demoted).setVisibility(View.VISIBLE);
+                        }
                     } else {
+
                         v = mlf.inflate(R.layout.draw_match_layout, null);
+                        if (promoted){
+                            v.findViewById(R.id.promoted).setVisibility(View.VISIBLE);
+                        }
+                    }
+                    if (matchmvp){
+                        ((TextView)v.findViewById(R.id.mvp)).setText("MATCH MVP");
+                        v.findViewById(R.id.mvp).setVisibility(View.VISIBLE);
+                    }
+                    else if (teammvp){
+                        ((TextView)v.findViewById(R.id.mvp)).setText("TEAM MVP");
+                        v.findViewById(R.id.mvp).setVisibility(View.VISIBLE);
                     }
                     String finalKda = kda;
                     String finalEnemyteam = enemyteam;

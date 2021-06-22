@@ -15,6 +15,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.navigation.ui.AppBarConfiguration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.Login.Auth;
 import com.squareup.picasso.Picasso;
@@ -39,7 +41,9 @@ public class matches extends AppCompatActivity{
         setContentView(R.layout.match_history);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
+        for (int j = 0;j<20;j++){
+            ((LinearLayout)findViewById(R.id.matchesz)).addView(new TextView(this));
+        }
         try {
             LoadMatches();
         } catch (JSONException e) {
@@ -161,7 +165,8 @@ public class matches extends AppCompatActivity{
                             if (mapID.contains("Foxtrot")) {
                                 ((ImageView) v.findViewById(R.id.match)).setBackgroundResource(R.drawable.foxtrot);
                             }
-                            l.addView(v);
+                            l.removeViewAt(ls.indexOf(o));
+                            l.addView(v ,ls.indexOf(o));
 
                         }
                     });

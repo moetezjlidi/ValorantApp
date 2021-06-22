@@ -67,8 +67,8 @@
 
         <TextView
             android:id="@+id/rating"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:gravity="center"
             android:text="-19"
             android:textAllCaps="false"
@@ -135,9 +135,10 @@
             android:layout_marginBottom="12dp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/kda"
+            app:layout_constraintEnd_toStartOf="@+id/game_score"
             app:layout_constraintStart_toEndOf="@+id/rank"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.513"
             app:srcCompat="@drawable/tx_competitivetiermovement_demoted" />
 
         <TextView

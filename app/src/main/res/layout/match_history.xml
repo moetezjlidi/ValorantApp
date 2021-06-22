@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BD5555"
-    tools:context=".matches"
-    android:scrollbarSize="20dp">
+    android:scrollbarSize="20dp"
+    tools:context=".matches">
 
     <ScrollView
+        android:id="@+id/scrollView5"
         android:layout_width="391dp"
         android:layout_height="595dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,9 +25,17 @@
             android:orientation="vertical">
 
 
-
-
-
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/lmatches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load matches"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

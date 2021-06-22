@@ -242,7 +242,13 @@ public class matches extends AppCompatActivity{
                             ((TextView) v.findViewById(R.id.kda)).setText("KDA : " + finalKda);
                             ((TextView) v.findViewById(R.id.game_score)).setText(finalMyteam + " - " + finalEnemyteam);
                             Picasso.get().load("https://media.valorant-api.com/agents/" + finalAgent + "/displayicon.png").into((ImageView) v.findViewById(R.id.agent));
-                            ((TextView) v.findViewById(R.id.rating)).setText(rating);
+                            if (Integer.parseInt(rating) > 0){
+                                ((TextView) v.findViewById(R.id.rating)).setText("+"+rating);
+                            }
+                            else{
+                                ((TextView) v.findViewById(R.id.rating)).setText(rating);
+                            }
+
                             ((TextView)v.findViewById(R.id.score)).setText("SCORE:"+finalScore);
                             LinearLayout l = findViewById(R.id.matchesz);
                             if (mapID.contains("Bonsai")) {

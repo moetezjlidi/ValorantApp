@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -41,6 +43,55 @@ public class matches extends AppCompatActivity{
         setContentView(R.layout.match_history);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+        //
+
+        Intent i = getIntent();
+        Auth auth = (Auth) i.getSerializableExtra("auth");
+        Picasso.get().load("https://raw.githubusercontent.com/RumbleMike/ValorantStreamOverlay/main/Resources/TX_CompetitiveTier_Large_"+auth.getRank_id()+".png").into((ImageView)findViewById(R.id.player_rank));
+       String rank = auth.getRank();
+        ((TextView)findViewById(R.id.name_rank)).setText(rank);
+        ((ProgressBar)findViewById(R.id.rank_progress)).setProgress(Integer.parseInt(auth.getLp()));
+        ((TextView)findViewById(R.id.current_rating)).setText(auth.getLp()+"/100");
+        //silver #828582
+        //gold #ECCE57
+        //IRON #5D5D5D
+        //plat #3697A8
+        //DIA #A974EF
+        //imo #3697A8
+        //radiant #FFFFB2
+        //bronze #A5885D
+        if (rank.toUpperCase().contains("GOLD")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#ECCE57"));
+        }
+        if (rank.toUpperCase().contains("BRONZE")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#A5885D"));
+        }
+        if (rank.toUpperCase().contains("PLAT")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#3697A8"));
+        }
+        if (rank.toUpperCase().contains("SILVER")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#828582"));
+        }
+        if (rank.toUpperCase().contains("IRON")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#5D5D5D"));
+        }
+        if (rank.toUpperCase().contains("DIAMOND")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#A974EF"));
+        }
+        if (rank.toUpperCase().contains("IMMORTAL")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#3697A8"));
+        }
+        if (rank.toUpperCase().contains("RADIANT")){
+            ((TextView)findViewById(R.id.name_rank)).setTextColor(Color.parseColor("#FFFFB2"));
+        }
+
+
+
+
+
+
+
+        //
         for (int j = 0;j<20;j++){
             ((LinearLayout)findViewById(R.id.matchesz)).addView(new TextView(this));
         }
@@ -192,7 +243,7 @@ public class matches extends AppCompatActivity{
                             ((TextView) v.findViewById(R.id.game_score)).setText(finalMyteam + " - " + finalEnemyteam);
                             Picasso.get().load("https://media.valorant-api.com/agents/" + finalAgent + "/displayicon.png").into((ImageView) v.findViewById(R.id.agent));
                             ((TextView) v.findViewById(R.id.rating)).setText(rating);
-                            ((TextView)v.findViewById(R.id.score)).setText(finalScore);
+                            ((TextView)v.findViewById(R.id.score)).setText("SCORE:"+finalScore);
                             LinearLayout l = findViewById(R.id.matchesz);
                             if (mapID.contains("Bonsai")) {
                                 ((ImageView) v.findViewById(R.id.match)).setBackgroundResource(R.drawable.bonsai);

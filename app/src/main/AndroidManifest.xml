@@ -22,6 +22,9 @@
             android:name=".Store"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity
+            android:name=".matches"
+            android:theme="@style/Theme.MyApplication.NoActionBar"/>
+        <activity
             android:name=".User"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity
@@ -34,6 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

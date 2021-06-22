@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/match"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/listviewicon"
+            android:src="@drawable/draw_header"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/game_score"
+            android:layout_width="100dp"
+            android:layout_height="22dp"
+
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="13 - 13"
+            android:textAllCaps="false"
+            android:textColor="#F4F1E5"
+            android:textSize="16sp"
+
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toTopOf="@+id/kda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/agent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/match"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/reyna" />
+
+        <ImageView
+            android:id="@+id/rank"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/agent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tx_competitivetier_large_17" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="+1"
+            android:textAllCaps="false"
+            android:textColor="#F4F1E5"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/agent"
+            app:layout_constraintTop_toBottomOf="@+id/rank"
+            app:layout_constraintVertical_bias="0.157" />
+
+        <TextView
+            android:id="@+id/draw"
+
+            android:layout_width="81dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:text="DRAW"
+            android:textColor="#DDBF64"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/game_score"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="100dp"
+            android:layout_height="13dp"
+            android:layout_marginEnd="147dp"
+            android:layout_marginRight="147dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="SCORE : 0,000"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/kda"
+            android:layout_width="100dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="144dp"
+            android:layout_marginLeft="144dp"
+            android:autoText="false"
+            android:gravity="center"
+            android:text="KDA : 00/00/00"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/score"
+            app:layout_constraintStart_toStartOf="@+id/match" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

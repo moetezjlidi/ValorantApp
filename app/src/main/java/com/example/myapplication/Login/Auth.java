@@ -52,6 +52,15 @@ public class Auth extends AppCompatActivity implements Serializable {
     private ArrayList<Store_item> items;
     private String allskins;
 
+    public String getMatches() {
+        return matches;
+    }
+
+    public void setMatches(String matches) {
+        this.matches = matches;
+    }
+
+    private String matches;
     public String getAll_contracts() {
         return all_contracts;
     }
@@ -98,6 +107,22 @@ public class Auth extends AppCompatActivity implements Serializable {
 
     private int agentsLength;
     private  ArrayList<String>  agentsSplash  = new ArrayList<String>();
+    public String getMatchInfo(String match){
+        String res = "";
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder().url("https://pd.eu.a.pvp.net/match-details/v1/matches/"+match).addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
+        try (Response response = client.newCall(request).execute()) {
+            res = response.body().string();
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+        return  res;
+    }
     public void GetContracts(){
         //https://pd.eu.a.pvp.net/contract-definitions/v2/definitions
         OkHttpClient client = new OkHttpClient.Builder().build();
@@ -120,6 +145,22 @@ public class Auth extends AppCompatActivity implements Serializable {
             this.mycontracts = rep.body().string();
 
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void getMatchHistory(){
+        //https://pd.ap.a.pvp.net/mmr/v1/players/{user_id}/competitiveupdates?startIndex=0&endIndex=15&queue=competitive
+        String url = "https://pd.eu.a.pvp.net/mmr/v1/players/"+this.uid+"/competitiveupdates?startIndex=0&endIndex=20&queue=competitive";
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder().url(url).addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
+        try (Response response = client.newCall(request).execute()) {
+            JSONArray matches = new JSONObject(response.body().string()).getJSONArray("Matches");
+            this.matches = matches.toString();
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
     }
@@ -241,6 +282,15 @@ public class Auth extends AppCompatActivity implements Serializable {
     private String name;
     private String version;
     private String tag;
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
     private String uid;
     private String card;
     private int n = 0;

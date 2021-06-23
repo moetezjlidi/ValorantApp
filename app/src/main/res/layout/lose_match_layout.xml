@@ -39,7 +39,7 @@
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toTopOf="@+id/kda"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
@@ -59,7 +59,7 @@
             android:id="@+id/rank"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/agent"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -67,8 +67,11 @@
 
         <TextView
             android:id="@+id/rating"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="28dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="-19"
             android:textAllCaps="false"
@@ -78,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/agent"
             app:layout_constraintTop_toBottomOf="@+id/rank"
-            app:layout_constraintVertical_bias="0.157" />
+            app:layout_constraintVertical_bias="0.062" />
 
         <TextView
             android:id="@+id/defeat"
@@ -94,14 +97,12 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/kda"
             android:layout_width="100dp"
             android:layout_height="22dp"
-            android:layout_marginStart="144dp"
-            android:layout_marginLeft="144dp"
             android:autoText="false"
             android:gravity="center"
             android:text="KDA : 00/00/00"
@@ -110,6 +111,8 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/score"
+            app:layout_constraintEnd_toEndOf="@+id/match"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -138,22 +141,30 @@
             app:layout_constraintEnd_toStartOf="@+id/game_score"
             app:layout_constraintStart_toEndOf="@+id/rank"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.513"
+            app:layout_constraintVertical_bias="0.407"
             app:srcCompat="@drawable/tx_competitivetiermovement_demoted" />
 
         <TextView
             android:id="@+id/mvp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:text="ASBA MVP"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="sans-serif"
+            android:shadowColor="#E8DFDF"
+            android:shadowRadius="0"
+            android:text="MATCH MVP"
             android:textColor="#FFC107"
+            android:textSize="8sp"
             android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rating"
+            app:layout_constraintVertical_bias="0.272" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -263,18 +263,6 @@
                     app:backgroundTint="#1D3043"
                     app:cornerRadius="200dp"
                     tools:visibility="visible" />
-                <Button
-                    android:id="@+id/find_player"
-                    android:layout_width="331dp"
-                    android:layout_height="92dp"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/valfont"
-                    android:text="Search a Player"
-                    android:textColor="#FFFFFF"
-                    android:visibility="visible"
-                    app:backgroundTint="#1D3043"
-                    app:cornerRadius="200dp"
-                    tools:visibility="visible" />
 
                 <Button
                     android:id="@+id/button_battle"

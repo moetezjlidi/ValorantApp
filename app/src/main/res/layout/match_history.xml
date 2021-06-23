@@ -27,7 +27,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="259dp"
-        android:layout_height="121dp"
+        android:layout_height="129dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView5"
         app:layout_constraintEnd_toEndOf="parent"

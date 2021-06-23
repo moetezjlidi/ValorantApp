@@ -554,7 +554,7 @@ public class Auth extends AppCompatActivity implements Serializable {
             e.printStackTrace();
         }
         Log.d("Season" , result);
-        return "52e9749a-429b-7060-99fe-4595426a0cf7";
+        return "97b39124-46ce-8b55-8fd1-7cbf7ffe173f";
     }
 
     public void _getRank() {

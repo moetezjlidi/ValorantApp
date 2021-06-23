@@ -249,7 +249,7 @@ public class matches extends AppCompatActivity{
                                 ((TextView) v.findViewById(R.id.rating)).setText(rating);
                             }
 
-                            ((TextView)v.findViewById(R.id.score)).setText("SCORE:"+finalScore);
+                            ((TextView)v.findViewById(R.id.score)).setText("SCORE: "+finalScore);
                             LinearLayout l = findViewById(R.id.matchesz);
                             if (mapID.contains("Bonsai")) {
                                 ((ImageView) v.findViewById(R.id.match)).setBackgroundResource(R.drawable.bonsai);

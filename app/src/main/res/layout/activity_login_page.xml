@@ -12,10 +12,10 @@
         android:id="@+id/background"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.95"
+        android:alpha="1"
         android:background="@android:color/transparent"
 
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/qarzgj2" />
@@ -103,7 +103,6 @@
         android:layout_width="220dp"
         android:layout_height="80dp"
         android:background="@android:color/transparent"
-
         android:textColorHint="#FFFFFF"
         app:boxBackgroundColor="@android:color/transparent"
         app:boxBackgroundMode="filled"
@@ -135,9 +134,9 @@
         android:layout_width="220dp"
         android:layout_height="80dp"
         android:layout_marginBottom="252dp"
-        android:background="@android:color/transparent"
+        app:boxBackgroundColor="@color/black"
+        app:boxBackgroundMode="filled"
         android:textColorHint="#FFFFFF"
-        app:boxBackgroundColor="#00D13232"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"

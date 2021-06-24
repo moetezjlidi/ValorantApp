@@ -5,19 +5,21 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BD5555">
+    android:background="@android:color/transparent">
 
 
     <ImageView
         android:id="@+id/background"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:alpha="0.85"
-        android:scaleType="fitXY"
+        android:alpha="0.95"
+        android:background="@android:color/transparent"
 
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background1" />
+        app:srcCompat="@drawable/qarzgj2" />
+
 
     <Button
         android:id="@+id/login"
@@ -26,7 +28,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="72dp"
         android:enabled="true"
         android:fontFamily="@font/valfont"
         android:gravity="center"
@@ -40,35 +42,33 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <TextView
         android:id="@+id/textView"
-        android:layout_width="129dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="180dp"
+        android:layout_width="251dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="@font/valfont"
         android:gravity="center"
         android:text="SIGN IN"
         android:textColor="@android:color/white"
         android:textSize="34sp"
         android:textStyle="bold"
-        android:fontFamily="@font/valfont"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/background" />
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="353dp"
-        android:layout_height="153dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="240dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
         android:alpha="0.7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/_280px_valorant_logo___pink_color_version_svg" />
-
 
     <ImageView
         android:id="@+id/imageView2"
@@ -104,8 +104,10 @@
         android:layout_height="80dp"
         android:background="@android:color/transparent"
 
+        android:textColorHint="#FFFFFF"
         app:boxBackgroundColor="@android:color/transparent"
         app:boxBackgroundMode="filled"
+        app:boxStrokeColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"
@@ -125,8 +127,7 @@
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
             android:textColorLink="#C85555"
-            android:textSize="24sp"
-            app:boxBackgroundColor="@android:color/transparent" />
+            android:textSize="24sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -135,7 +136,8 @@
         android:layout_height="80dp"
         android:layout_marginBottom="252dp"
         android:background="@android:color/transparent"
-        app:boxBackgroundColor="@android:color/transparent"
+        android:textColorHint="#FFFFFF"
+        app:boxBackgroundColor="#00D13232"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"
@@ -151,10 +153,11 @@
             android:gravity="center"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:shadowColor="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/black"
             android:textSize="24sp"
-            app:boxBackgroundColor="@android:color/transparent" />
+            app:boxBackgroundColor="#7B2CDC" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -189,12 +192,13 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/result"
         android:layout_width="271dp"
         android:layout_height="42dp"
         android:layout_gravity="center"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:visibility="visible"

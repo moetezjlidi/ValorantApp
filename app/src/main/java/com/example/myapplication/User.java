@@ -7,17 +7,24 @@ import android.os.Bundle;
 
 import com.example.myapplication.Login.Auth;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.databinding.ActivityUserBinding;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
 public class User extends AppCompatActivity  {
@@ -43,6 +50,17 @@ public class User extends AppCompatActivity  {
 
         Intent i = getIntent();
         Auth auth = (Auth) i.getSerializableExtra("auth");
+        FirebaseMessaging.getInstance().subscribeToTopic(auth.getUid())
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg ="Done";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
+                        Log.d("FIREBASE", msg);
+                    }
+                });
         ImageView card_img = (ImageView) findViewById(R.id.card_img);
         ImageView rank_img = (ImageView) findViewById(R.id.rank_img);
         Picasso.get().load("https://raw.githubusercontent.com/RumbleMike/ValorantStreamOverlay/main/Resources/TX_CompetitiveTier_Large_"+auth.getRank_id()+".png").into(rank_img);

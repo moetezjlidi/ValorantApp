@@ -88,7 +88,7 @@
                         app:layout_constraintHorizontal_bias="0.592"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -133,7 +133,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/buddy_stinger"
@@ -186,7 +186,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/buddy_spectre"
@@ -235,7 +235,7 @@
                         app:layout_constraintHorizontal_bias="0.592"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <TextView
                         android:id="@+id/shorty"
@@ -354,7 +354,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/buddy_bucky"
@@ -448,7 +448,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/buddy_judge"
@@ -581,7 +581,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/marshal_buddy"
@@ -675,7 +675,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/operator_buddy"
@@ -838,7 +838,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/ares_buddy"
@@ -933,7 +933,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon__1_" />
+                        app:srcCompat="@drawable/displayicon" />
 
                     <ImageView
                         android:id="@+id/odin_buddy"

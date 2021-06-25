@@ -1097,7 +1097,7 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tag1"
-            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintHorizontal_bias="0.612"
             app:layout_constraintStart_toEndOf="@+id/agent_card" />
 
         <TextView
@@ -1135,7 +1135,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="52dp"
             android:fontFamily="@font/valfont"
             android:text="Preround Spray"
             android:textAllCaps="true"
@@ -1143,14 +1143,14 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/textView12"
             app:layout_constraintEnd_toStartOf="@+id/tag2"
-            app:layout_constraintHorizontal_bias="0.536"
+            app:layout_constraintHorizontal_bias="0.542"
             app:layout_constraintStart_toEndOf="@+id/agent_card" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="44dp"
+            android:layout_marginBottom="52dp"
             android:fontFamily="@font/valfont"
             android:text="Midround Spray"
             android:textAllCaps="true"
@@ -1158,7 +1158,7 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toStartOf="@+id/tag3"
-            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintHorizontal_bias="0.567"
             app:layout_constraintStart_toEndOf="@+id/agent_card" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

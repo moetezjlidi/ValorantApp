@@ -10,8 +10,8 @@
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="131dp"
-        android:layout_height="26dp"
+        android:layout_width="132dp"
+        android:layout_height="29dp"
         android:background="@android:drawable/btn_dropdown"
         android:dropDownWidth="match_parent"
         android:spinnerMode="dropdown"
@@ -38,8 +38,9 @@
     </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
         android:layout_width="218dp"
-        android:layout_height="104dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,10 +50,10 @@
 
         <ImageView
             android:id="@+id/player_rank"
-            android:layout_width="49dp"
-            android:layout_height="45dp"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -68,7 +69,8 @@
             app:layout_constraintBottom_toTopOf="@+id/rank_progress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/player_rank" />
+            app:layout_constraintTop_toBottomOf="@+id/player_rank"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ProgressBar
             android:id="@+id/rank_progress"

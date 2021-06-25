@@ -138,7 +138,7 @@
             app:layout_constraintEnd_toStartOf="@+id/valo_pt"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.955"
-            app:srcCompat="@drawable/displayicon" />
+            app:srcCompat="@drawable/valorant_points" />
 
         <ImageView
             android:id="@+id/imageView8"

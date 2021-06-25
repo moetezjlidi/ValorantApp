@@ -23,6 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/valorant_logo" />
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="16dp"
@@ -33,7 +34,7 @@
             app:layout_constraintEnd_toStartOf="@+id/valo_pt"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.955"
-            app:srcCompat="@drawable/displayicon" />
+            app:srcCompat="@drawable/valorant_points" />
         <TextView
             android:id="@+id/valo_pt"
             android:layout_width="50dp"

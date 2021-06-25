@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -19,12 +20,15 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.myapplication.Login.Auth;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 public class NotificationService extends FirebaseMessagingService {
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
+    public void onMessageReceived(RemoteMessage remoteMessage ) {
         super.onMessageReceived(remoteMessage);
         /*AudioAttributes attributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_NOTIFICATION)
@@ -42,43 +46,54 @@ public class NotificationService extends FirebaseMessagingService {
         mp.start();
         manager.notify(123, notification);
         Log.d("Not" , "Done");*/
+        Activity currentActivity = ((MyApp)getApplicationContext().getApplicationContext()).getCurrentActivity();
+        Auth  auth =  (Auth) currentActivity.getIntent().getExtras().get("auth");
+        Log.d("Jaw"  , "Got auth");
+        Log.d("ID ha zebi" , auth.getUid());
+        if (remoteMessage.getData().get("title").equals(auth.getUid())){
+            NotificationManager mNotificationManager;
 
-        NotificationManager mNotificationManager;
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(getApplicationContext(), "Your_channel_id");
+            Intent ii = new Intent(getApplicationContext(), User.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, ii, 0);
 
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(getApplicationContext(), "Your_channel_id");
-        Intent ii = new Intent(getApplicationContext(), User.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, ii, 0);
+            NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
+            bigText.bigText("Test");
+            bigText.setBigContentTitle("Yo , Match found , You got 90 secs to pick");
+            bigText.setSummaryText("Valo app");
+            PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+                    new Intent(this, agent_select.class).putExtra("auth" , auth), PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
-        bigText.bigText("Test");
-        bigText.setBigContentTitle("Yo , Match found , You got 90 secs to pick");
-        bigText.setSummaryText("Valo app");
+            mBuilder.setContentIntent(contentIntent);
+            mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
+            mBuilder.setContentTitle("Match found");
+            mBuilder.setContentText("Omek kahba ya moetez");
+            mBuilder.setPriority(Notification.PRIORITY_HIGH);
+            mBuilder.setStyle(bigText);
 
-        mBuilder.setContentIntent(pendingIntent);
-        mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
-        mBuilder.setContentTitle("Match found");
-        mBuilder.setContentText("Omek kahba ya moetez");
-        mBuilder.setPriority(Notification.PRIORITY_MAX);
-        mBuilder.setStyle(bigText);
-
-        mNotificationManager =
-                (NotificationManager) getApplicationContext().getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+            mNotificationManager =
+                    (NotificationManager) getApplicationContext().getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
 
 // === Removed some obsoletes
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        {
-            String channelId = "Your_channel_id";
-            NotificationChannel channel = new NotificationChannel(
-                    channelId,
-                    "Channel human readable title",
-                    NotificationManager.IMPORTANCE_HIGH);
-            mNotificationManager.createNotificationChannel(channel);
-            mBuilder.setChannelId(channelId);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            {
+                String channelId = "Your_channel_id";
+                NotificationChannel channel = new NotificationChannel(
+                        channelId,
+                        "Channel human readable title",
+                        NotificationManager.IMPORTANCE_HIGH);
+                mNotificationManager.createNotificationChannel(channel);
+                mBuilder.setChannelId(channelId);
+            }
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){ mBuilder.setChannelId("Your_channel_id"); }
+            MediaPlayer mp= MediaPlayer.create(getApplicationContext(), R.raw.match);
+            mp.start();
+            mNotificationManager.notify(0, mBuilder.build());
         }
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){ mBuilder.setChannelId("Your_channel_id"); }
-        MediaPlayer mp= MediaPlayer.create(getApplicationContext(), R.raw.match);
-        mp.start();
-        mNotificationManager.notify(0, mBuilder.build());
+        else{
+            Log.d("NO MATCH" , "NOOO");
+        }
+
     }
 }

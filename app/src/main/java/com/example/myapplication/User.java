@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
@@ -38,7 +40,7 @@ import com.squareup.picasso.Picasso;
 public class User extends AppCompatActivity  {
 
     private ActivityUserBinding binding;
-
+    protected MyApp mMyApp ;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +56,13 @@ public class User extends AppCompatActivity  {
 
         binding = ActivityUserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        mMyApp = (MyApp) this .getApplicationContext() ;
 
         Intent i = getIntent();
         Auth auth = (Auth) i.getSerializableExtra("auth");
+        Intent ir=new Intent(this, NotificationService.class);
+        ir.putExtra("auth", auth);
+        this.startService(ir);
         FirebaseMessaging.getInstance().subscribeToTopic(auth.getUid())
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -127,6 +132,23 @@ public class User extends AppCompatActivity  {
 
 
 
+    }
+    protected void onResume () {
+        super .onResume() ;
+        mMyApp .setCurrentActivity( this ) ;
+    }
+    protected void onPause () {
+        clearReferences() ;
+        super .onPause() ;
+    }
+    protected void onDestroy () {
+        clearReferences() ;
+        super .onDestroy() ;
+    }
+    private void clearReferences () {
+        Activity currActivity = mMyApp .getCurrentActivity() ;
+        if ( this .equals(currActivity))
+            mMyApp .setCurrentActivity( null ) ;
     }
 
 }

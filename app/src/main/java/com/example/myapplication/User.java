@@ -1,13 +1,20 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 
 import com.example.myapplication.Login.Auth;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Html;
@@ -27,6 +34,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
+@RequiresApi(api = Build.VERSION_CODES.M)
 public class User extends AppCompatActivity  {
 
     private ActivityUserBinding binding;

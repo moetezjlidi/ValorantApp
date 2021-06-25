@@ -14,15 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:overrideLibrary="jp.wasabeef.blurry">
+        <activity android:name=".agent_select"></activity>
+
         <service
             android:name=".NotificationService"
             android:enabled="true"
             android:exported="true">
-
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-
         </service>
 
         <activity android:name=".Collection" />

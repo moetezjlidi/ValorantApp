@@ -133,7 +133,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/displayicon" />
+                        app:srcCompat="@drawable/displayicon__1_" />
 
                     <ImageView
                         android:id="@+id/buddy_stinger"

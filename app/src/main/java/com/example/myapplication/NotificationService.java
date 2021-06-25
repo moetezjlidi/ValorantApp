@@ -26,7 +26,7 @@ public class NotificationService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-        AudioAttributes attributes = new AudioAttributes.Builder()
+        /*AudioAttributes attributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_NOTIFICATION)
                 .build();
         Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getApplicationContext().getPackageName() + "/" + R.raw.match);  //Here is FILE_NAME is the name of file that you want to play
@@ -41,6 +41,44 @@ public class NotificationService extends FirebaseMessagingService {
         MediaPlayer mp= MediaPlayer.create(getApplicationContext(), R.raw.match);
         mp.start();
         manager.notify(123, notification);
-        Log.d("Not" , "Done");
+        Log.d("Not" , "Done");*/
+
+        NotificationManager mNotificationManager;
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(getApplicationContext(), "Your_channel_id");
+        Intent ii = new Intent(getApplicationContext(), User.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, ii, 0);
+
+        NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
+        bigText.bigText("Test");
+        bigText.setBigContentTitle("Yo , Match found , You got 90 secs to pick");
+        bigText.setSummaryText("Valo app");
+
+        mBuilder.setContentIntent(pendingIntent);
+        mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
+        mBuilder.setContentTitle("Match found");
+        mBuilder.setContentText("Omek kahba ya moetez");
+        mBuilder.setPriority(Notification.PRIORITY_MAX);
+        mBuilder.setStyle(bigText);
+
+        mNotificationManager =
+                (NotificationManager) getApplicationContext().getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+
+// === Removed some obsoletes
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            String channelId = "Your_channel_id";
+            NotificationChannel channel = new NotificationChannel(
+                    channelId,
+                    "Channel human readable title",
+                    NotificationManager.IMPORTANCE_HIGH);
+            mNotificationManager.createNotificationChannel(channel);
+            mBuilder.setChannelId(channelId);
+        }
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){ mBuilder.setChannelId("Your_channel_id"); }
+        MediaPlayer mp= MediaPlayer.create(getApplicationContext(), R.raw.match);
+        mp.start();
+        mNotificationManager.notify(0, mBuilder.build());
     }
 }

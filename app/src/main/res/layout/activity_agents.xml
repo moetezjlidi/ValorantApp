@@ -158,7 +158,7 @@
             android:layout_marginBottom="30dp"
 
             android:background="#1D3043"
-            app:fillColor="#FFFFFFFF"
+
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">

@@ -22,8 +22,8 @@ import com.denzcoskun.imageslider.interfaces.ItemChangeListener;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.myapplication.Login.Auth;
 import com.squareup.picasso.Picasso;
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
+
+
 
 import org.json.JSONArray;
 import org.json.JSONException;

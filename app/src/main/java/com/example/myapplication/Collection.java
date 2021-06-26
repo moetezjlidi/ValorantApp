@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Collection extends AppCompatActivity {
+    protected MyApp mMyApp ;
     String BUDDY_URL = "https://media.valorant-api.com/buddies/";
     String Chroma_URL  = "https://media.valorant-api.com/weaponskinchromas/";
     String CARD_URL = "https://media.valorant-api.com/playercards/";
@@ -46,7 +48,9 @@ public class Collection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_collection);
+        mMyApp = (MyApp) this .getApplicationContext() ;
         Intent i = this.getIntent();
         Auth auth = (Auth) i.getSerializableExtra("auth");
         //04af080a-4071-487b-61c0-5b9c0cfaac74:3
@@ -129,5 +133,23 @@ public class Collection extends AppCompatActivity {
         }
 
 
+    }
+
+    protected void onResume () {
+        super .onResume() ;
+        mMyApp .setCurrentActivity( this ) ;
+    }
+    protected void onPause () {
+        clearReferences() ;
+        super .onPause() ;
+    }
+    protected void onDestroy () {
+        clearReferences() ;
+        super .onDestroy() ;
+    }
+    private void clearReferences () {
+        Activity currActivity = mMyApp .getCurrentActivity() ;
+        if ( this .equals(currActivity))
+            mMyApp .setCurrentActivity( null ) ;
     }
 }

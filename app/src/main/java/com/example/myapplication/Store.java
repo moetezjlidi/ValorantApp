@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -27,13 +28,14 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class Store extends AppCompatActivity {
-
+    protected MyApp mMyApp ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_store);
         Intent i = getIntent();
+        mMyApp = (MyApp) this .getApplicationContext() ;
         Auth auth = (Auth) i.getSerializableExtra("auth");
         ImageView card_img = (ImageView) findViewById(R.id.card_img);
         ImageView rank_img = (ImageView) findViewById(R.id.rank_img);
@@ -137,5 +139,22 @@ public class Store extends AppCompatActivity {
         }
 
         return String.valueOf(number);
+    }
+    protected void onResume () {
+        super .onResume() ;
+        mMyApp .setCurrentActivity( this ) ;
+    }
+    protected void onPause () {
+        clearReferences() ;
+        super .onPause() ;
+    }
+    protected void onDestroy () {
+        clearReferences() ;
+        super .onDestroy() ;
+    }
+    private void clearReferences () {
+        Activity currActivity = mMyApp .getCurrentActivity() ;
+        if ( this .equals(currActivity))
+            mMyApp .setCurrentActivity( null ) ;
     }
 }

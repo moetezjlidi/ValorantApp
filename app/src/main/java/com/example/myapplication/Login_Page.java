@@ -88,7 +88,7 @@ private ActivityLoginPageBinding binding;
                              auth._getLoadOut();
                              result2.setText(result2.getText() + "\n" + "Downloaded Player's loadout");
                              try {
-                                 auth._getPlayerNameAndTag();
+                                 auth._getPlayerNameAndTag(auth.getUid());
                              } catch (JSONException e) {
                                  e.printStackTrace();
                              }

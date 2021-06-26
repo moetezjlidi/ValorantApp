@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.denzcoskun.imageslider.constants.ScaleTypes;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.Image;
@@ -36,6 +38,7 @@ import java.util.List;
 
 public class agents extends AppCompatActivity {
  public int current = 0;
+ protected MyApp mMyApp ;
  String buddies  = "{\n" +
          "\"ba08f19b-496c-bc8d-45ff-c0a05759a0e6\":\"https://media.valorant-api.com/buddies/452194fb-4ebd-353a-2ff7-0e90cf5523f9/displayicon.png\",\n" +
          "\"633f5deb-41d2-b9d2-b099-0dbbfd7b3a69\":\"https://media.valorant-api.com/buddies/d6f5e6a4-4d42-b56d-03c3-92955d294f54/displayicon.png\",\n" +
@@ -154,6 +157,7 @@ public class agents extends AppCompatActivity {
         Intent i = getIntent();
         Auth auth = (Auth) i.getSerializableExtra("auth");
         auth.getAgents();
+        mMyApp = (MyApp) this .getApplicationContext() ;
         ArrayList<String> data = auth.getAgentsSplash();
         ImageSlider slider = findViewById(R.id.slider);
         ArrayList<String> free_agents = new ArrayList<String>();
@@ -433,5 +437,22 @@ public class agents extends AppCompatActivity {
 
 
 
+    }
+    protected void onResume () {
+        super .onResume() ;
+        mMyApp .setCurrentActivity( this ) ;
+    }
+    protected void onPause () {
+        clearReferences() ;
+        super .onPause() ;
+    }
+    protected void onDestroy () {
+        clearReferences() ;
+        super .onDestroy() ;
+    }
+    private void clearReferences () {
+        Activity currActivity = mMyApp .getCurrentActivity() ;
+        if ( this .equals(currActivity))
+            mMyApp .setCurrentActivity( null ) ;
     }
 }

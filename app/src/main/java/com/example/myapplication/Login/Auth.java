@@ -148,6 +148,40 @@ public class Auth extends AppCompatActivity implements Serializable {
             e.printStackTrace();
         }
     }
+        public String getPregame(String match){
+            String res = "";
+            OkHttpClient client = new OkHttpClient.Builder().build();
+            Request request = new Request.Builder().url("https://glz-eu-1.eu.a.pvp.net/pregame/v1/matches/"+match).addHeader("Content-Type", "application/json")
+                    .addHeader("Authorization", "Bearer " + this.token)
+                    .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                    .addHeader("X-Riot-ClientVersion", this.version)
+                    .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
+            try (Response response = client.newCall(request).execute()) {
+                res = response.body().string();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return res;
+
+        }
+    public String getPregameMatchId(){
+        String res = "";
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder().url("https://glz-eu-1.eu.a.pvp.net/pregame/v1/players/"+this.uid).addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
+        try (Response response = client.newCall(request).execute()) {
+            res = new JSONObject(response.body().string()).getString("MatchID");
+
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
     public void getMatchHistory(){
         //https://pd.ap.a.pvp.net/mmr/v1/players/{user_id}/competitiveupdates?startIndex=0&endIndex=15&queue=competitive
         String url = "https://pd.eu.a.pvp.net/mmr/v1/players/"+this.uid+"/competitiveupdates?startIndex=0&endIndex=20&queue=competitive";
@@ -434,11 +468,69 @@ public class Auth extends AppCompatActivity implements Serializable {
     public String get_Card() {
         return this.card;
     }
+    public void LockAgent(String match , String agent) {
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        String url = "https://glz-eu-1.eu.a.pvp.net/pregame/v1/matches/"+match+"/lock/"+ agent;
+        RequestBody body = RequestBody.create("", null);
+        Request request = new Request.Builder().addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV)
+                .url(url).post(body).build();
+        try (Response response = client.newCall(request).execute()) {
+            Log.d("Rep Locked" , response.body().string());
 
-    public void _getPlayerNameAndTag() throws JSONException {
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void SelectAgent(String match , String agent){
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        String url = "https://glz-eu-1.eu.a.pvp.net/pregame/v1/matches/"+match+"/select/"+ agent;
+        RequestBody body = RequestBody.create("", null);
+        Request request = new Request.Builder().addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV)
+                .url(url).post(body).build();
+        try (Response response = client.newCall(request).execute()) {
+            Log.d("Rep selct" , response.body().string());
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public String getPlayerName(String uid){
+        String res = "";
         OkHttpClient client = new OkHttpClient.Builder().build();
 
-        RequestBody body = RequestBody.create("[\"" + this.uid + "\"]", JSON);
+        RequestBody body = RequestBody.create("[\"" + uid + "\"]", JSON);
+        Request request = new Request.Builder().addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV)
+                .url("https://pd.eu.a.pvp.net/name-service/v2/players").put(body).build();
+        try (Response response = client.newCall(request).execute()) {
+            JSONArray data = new JSONArray(response.body().string());
+            res = data.getJSONObject(0).getString("GameName");
+
+
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+    public void _getPlayerNameAndTag(String uid) throws JSONException {
+        OkHttpClient client = new OkHttpClient.Builder().build();
+
+        RequestBody body = RequestBody.create("[\"" + uid + "\"]", JSON);
         Request request = new Request.Builder().addHeader("Content-Type", "application/json")
                 .addHeader("Authorization", "Bearer " + this.token)
                 .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)

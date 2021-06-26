@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -33,6 +34,7 @@ import java.util.concurrent.Executors;
 
 
 public class matches extends AppCompatActivity{
+    protected MyApp mMyApp ;
     private AppBarConfiguration appBarConfiguration;
 
 
@@ -41,6 +43,7 @@ public class matches extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.match_history);
+        mMyApp = (MyApp) this .getApplicationContext() ;
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         //
@@ -288,6 +291,24 @@ public class matches extends AppCompatActivity{
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    protected void onResume () {
+        super .onResume() ;
+        mMyApp .setCurrentActivity( this ) ;
+    }
+    protected void onPause () {
+        clearReferences() ;
+        super .onPause() ;
+    }
+    protected void onDestroy () {
+        clearReferences() ;
+        super .onDestroy() ;
+    }
+    private void clearReferences () {
+        Activity currActivity = mMyApp .getCurrentActivity() ;
+        if ( this .equals(currActivity))
+            mMyApp .setCurrentActivity( null ) ;
     }
 
 }

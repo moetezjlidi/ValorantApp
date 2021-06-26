@@ -23,6 +23,9 @@ import androidx.core.app.NotificationManagerCompat;
 import com.example.myapplication.Login.Auth;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+
+import java.util.HashMap;
+
 public class NotificationService extends FirebaseMessagingService {
 
 
@@ -41,17 +44,27 @@ public class NotificationService extends FirebaseMessagingService {
                 .setContentText(remoteMessage.getData().get("body"))
                 .setSmallIcon(R.mipmap.ic_launcher).setStyle(s).setSound(sound)
                 .build();
+
         NotificationManagerCompat manager = NotificationManagerCompat.from(getApplicationContext());
         MediaPlayer mp= MediaPlayer.create(getApplicationContext(), R.raw.match);
         mp.start();
         manager.notify(123, notification);
         Log.d("Not" , "Done");*/
+        HashMap<String , Integer> maps = new HashMap<String , Integer>();
+        maps.put("/Game/Maps/Ascent/Ascent" , R.drawable.ascent);
+        maps.put("/Game/Maps/Bonsai/Bonsai" , R.drawable.split);
+        maps.put("/Game/Maps/Port/Port" , R.drawable.icebox);
+        maps.put("/Game/Maps/Foxtrot/Foxtrot" , R.drawable.breeze);
+        maps.put("/Game/Maps/Duality/Duality" , R.drawable.bind);
+        maps.put("/Game/Maps/Triad/Triad"  , R.drawable.haven);
         Activity currentActivity = ((MyApp)getApplicationContext().getApplicationContext()).getCurrentActivity();
         Auth  auth =  (Auth) currentActivity.getIntent().getExtras().get("auth");
         Log.d("Jaw"  , "Got auth");
         Log.d("ID ha zebi" , auth.getUid());
         if (remoteMessage.getData().get("title").equals(auth.getUid())){
             NotificationManager mNotificationManager;
+            String map = remoteMessage.getData().get("map");
+            
 
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(getApplicationContext(), "Your_channel_id");
@@ -60,7 +73,7 @@ public class NotificationService extends FirebaseMessagingService {
 
             NotificationCompat.BigTextStyle bigText = new NotificationCompat.BigTextStyle();
             bigText.bigText("Test");
-            bigText.setBigContentTitle("Yo , Match found , You got 90 secs to pick");
+            bigText.setBigContentTitle(remoteMessage.getData().get("body"));
             bigText.setSummaryText("Valo app");
             PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                     new Intent(this, agent_select.class).putExtra("auth" , auth), PendingIntent.FLAG_UPDATE_CURRENT);
@@ -68,9 +81,10 @@ public class NotificationService extends FirebaseMessagingService {
             mBuilder.setContentIntent(contentIntent);
             mBuilder.setSmallIcon(R.mipmap.ic_launcher_round);
             mBuilder.setContentTitle("Match found");
-            mBuilder.setContentText("Omek kahba ya moetez");
+            mBuilder.setContentText(remoteMessage.getData().get("body"));
             mBuilder.setPriority(Notification.PRIORITY_HIGH);
-            mBuilder.setStyle(bigText);
+            mBuilder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources() , maps.get(map))));
+
 
             mNotificationManager =
                     (NotificationManager) getApplicationContext().getSystemService(getApplicationContext().NOTIFICATION_SERVICE);

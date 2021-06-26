@@ -13,7 +13,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="58dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
@@ -30,7 +30,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="58dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
@@ -45,7 +45,9 @@
         android:id="@+id/player_name1"
         android:layout_width="126dp"
         android:layout_height="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
@@ -53,9 +55,9 @@
         android:textColor="#ECD48D"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/agent_selected"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/player1"
-        app:layout_constraintTop_toBottomOf="@+id/game_type" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/me"
@@ -171,7 +173,7 @@
         app:layout_constraintTop_toBottomOf="@+id/map_name" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="408dp"
+        android:layout_width="401dp"
         android:layout_height="160dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -204,7 +206,9 @@
             android:layout_height="50dp"
             android:src="@drawable/cypher"
             app:layout_constraintBottom_toTopOf="@+id/reyna"
-            app:layout_constraintEnd_toStartOf="@+id/jett" />
+            app:layout_constraintEnd_toStartOf="@+id/jett"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/breach"
@@ -213,7 +217,9 @@
             android:src="@drawable/breach"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/phoenix"
-            app:layout_constraintEnd_toStartOf="@+id/brimstone" />
+            app:layout_constraintEnd_toStartOf="@+id/brimstone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/jett"
@@ -221,7 +227,9 @@
             android:layout_height="50dp"
             android:src="@drawable/jett"
             app:layout_constraintBottom_toTopOf="@+id/sage"
-            app:layout_constraintEnd_toStartOf="@+id/kj" />
+            app:layout_constraintEnd_toStartOf="@+id/kj"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/yoru"
@@ -268,7 +276,9 @@
             android:layout_marginRight="56dp"
             android:src="@drawable/kj"
             app:layout_constraintBottom_toTopOf="@+id/skye"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/raze"
@@ -284,7 +294,9 @@
             android:layout_height="50dp"
             android:src="@drawable/astra"
             app:layout_constraintBottom_toTopOf="@+id/omen"
-            app:layout_constraintEnd_toStartOf="@+id/breach" />
+            app:layout_constraintEnd_toStartOf="@+id/breach"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/brimstone"
@@ -292,7 +304,9 @@
             android:layout_height="50dp"
             android:src="@drawable/brimstone"
             app:layout_constraintBottom_toTopOf="@+id/raze"
-            app:layout_constraintEnd_toStartOf="@+id/cypher" />
+            app:layout_constraintEnd_toStartOf="@+id/cypher"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/viper"
@@ -341,10 +355,12 @@
         android:layout_width="181dp"
         android:layout_height="398dp"
         android:layout_marginTop="92dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:scaleType="centerCrop"
         android:src="@drawable/fullportrait_breach"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -352,7 +368,9 @@
         android:id="@+id/player_name2"
         android:layout_width="126dp"
         android:layout_height="32dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="58dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
@@ -367,7 +385,9 @@
         android:id="@+id/player_name3"
         android:layout_width="126dp"
         android:layout_height="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="58dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
@@ -408,7 +428,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:text="PICKING ..."
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/player3"

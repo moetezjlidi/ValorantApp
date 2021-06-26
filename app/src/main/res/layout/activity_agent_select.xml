@@ -45,9 +45,7 @@
         android:id="@+id/player_name1"
         android:layout_width="126dp"
         android:layout_height="32dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
@@ -55,7 +53,8 @@
         android:textColor="#ECD48D"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/agent_selected"
-        app:layout_constraintStart_toEndOf="@+id/player1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game_type" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -139,10 +138,11 @@
         android:layout_width="134dp"
         android:layout_height="46dp"
         android:layout_marginTop="520dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:text="Leave"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lock_in"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -171,14 +171,13 @@
         app:layout_constraintTop_toBottomOf="@+id/map_name" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="162dp"
+        android:layout_width="408dp"
+        android:layout_height="160dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lock_in"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/reyna"
@@ -256,14 +255,10 @@
             android:id="@+id/omen"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginLeft="3dp"
             android:layout_marginBottom="54dp"
             android:src="@drawable/omen"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/phoenix"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/phoenix" />
 
         <ImageView
             android:id="@+id/kj"
@@ -287,13 +282,9 @@
             android:id="@+id/astra"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginLeft="3dp"
             android:src="@drawable/astra"
             app:layout_constraintBottom_toTopOf="@+id/omen"
-            app:layout_constraintEnd_toStartOf="@+id/breach"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/breach" />
 
         <ImageView
             android:id="@+id/brimstone"
@@ -316,14 +307,10 @@
             android:id="@+id/sova"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginLeft="3dp"
             android:layout_marginBottom="4dp"
             android:src="@drawable/sova"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/viper"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/viper" />
 
         <ImageView
             android:id="@+id/phoenix"

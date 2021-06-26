@@ -30,6 +30,7 @@ public class agent_select extends AppCompatActivity {
     private String selectedAgent;
     private String state;
     private int index;
+    private ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class agent_select extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
+
 
             exec.scheduleAtFixedRate(() -> {
                 runOnUiThread(new Runnable() {
@@ -62,6 +63,7 @@ public class agent_select extends AppCompatActivity {
                 });
 
             }, 1, 1, TimeUnit.SECONDS);
+
 
 
         ((ImageView)findViewById(R.id.astra)).setOnClickListener(new View.OnClickListener() {
@@ -208,6 +210,7 @@ public class agent_select extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 auth.LeavePregame(match);
+                exec.shutdownNow();
                 finish();
             }
         });

@@ -54,7 +54,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/agent_selected"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player1"
         app:layout_constraintTop_toBottomOf="@+id/game_type" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -103,8 +103,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="76dp"
-        app:civ_border_color="#3E5BB3"
         android:src="#9CA6C6"
+        app:civ_border_color="#3E5BB3"
         app:civ_border_width="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -352,25 +352,6 @@
         android:id="@+id/player_name2"
         android:layout_width="126dp"
         android:layout_height="32dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
-        android:textColor="#ECD48D"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/agent_selected"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/player1"
-        app:layout_constraintTop_toBottomOf="@+id/state1" />
-
-    <TextView
-        android:id="@+id/player_name3"
-        android:layout_width="126dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
@@ -378,8 +359,23 @@
         android:textColor="#ECD48D"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/agent_selected"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/player1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/player2"
+        app:layout_constraintTop_toBottomOf="@+id/player_name1" />
+
+    <TextView
+        android:id="@+id/player_name3"
+        android:layout_width="126dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
+        android:textColor="#ECD48D"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/agent_selected"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/player3"
         app:layout_constraintTop_toBottomOf="@+id/player_name2" />
 
     <TextView
@@ -388,7 +384,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:text="PICKING ..."
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/player1"
@@ -400,7 +396,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:text="PICKING ..."
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/player2"
@@ -424,7 +420,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:text="PICKING ..."
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/player4"
@@ -436,7 +432,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:text="PICKING ..."
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/me"

@@ -16,6 +16,7 @@
         android:layout_marginTop="58dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
+        android:textAllCaps="true"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
         android:textColor="#ECD48D"
         android:textSize="12sp"
@@ -172,169 +173,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map_name" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="401dp"
-        android:layout_height="160dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.722"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/reyna"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/reyna"
-            app:layout_constraintBottom_toTopOf="@+id/yoru"
-            app:layout_constraintEnd_toStartOf="@+id/sage" />
-
-        <ImageView
-            android:id="@+id/kayo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="106dp"
-            android:layout_marginRight="106dp"
-            android:layout_marginBottom="4dp"
-            android:src="@drawable/kayo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <ImageView
-            android:id="@+id/cypher"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/cypher"
-            app:layout_constraintBottom_toTopOf="@+id/reyna"
-            app:layout_constraintEnd_toStartOf="@+id/jett"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/breach"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/breach"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/phoenix"
-            app:layout_constraintEnd_toStartOf="@+id/brimstone"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/jett"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/jett"
-            app:layout_constraintBottom_toTopOf="@+id/sage"
-            app:layout_constraintEnd_toStartOf="@+id/kj"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/yoru"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="4dp"
-            android:src="@drawable/yoru"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/kayo" />
-
-        <ImageView
-            android:id="@+id/sage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/sage"
-            app:layout_constraintBottom_toTopOf="@+id/kayo"
-            app:layout_constraintEnd_toStartOf="@+id/skye" />
-
-        <ImageView
-            android:id="@+id/skye"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="56dp"
-            android:layout_marginRight="56dp"
-            android:layout_marginBottom="54dp"
-            android:src="@drawable/skye"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <ImageView
-            android:id="@+id/omen"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="54dp"
-            android:src="@drawable/omen"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/phoenix" />
-
-        <ImageView
-            android:id="@+id/kj"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="56dp"
-            android:layout_marginRight="56dp"
-            android:src="@drawable/kj"
-            app:layout_constraintBottom_toTopOf="@+id/skye"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/raze"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/raze"
-            app:layout_constraintBottom_toTopOf="@+id/viper"
-            app:layout_constraintEnd_toStartOf="@+id/reyna" />
-
-        <ImageView
-            android:id="@+id/astra"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/astra"
-            app:layout_constraintBottom_toTopOf="@+id/omen"
-            app:layout_constraintEnd_toStartOf="@+id/breach"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/brimstone"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/brimstone"
-            app:layout_constraintBottom_toTopOf="@+id/raze"
-            app:layout_constraintEnd_toStartOf="@+id/cypher"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/viper"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="4dp"
-            android:src="@drawable/viper"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/yoru" />
-
-        <ImageView
-            android:id="@+id/sova"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="4dp"
-            android:src="@drawable/sova"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/viper" />
-
-        <ImageView
-            android:id="@+id/phoenix"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/phoenix"
-            app:layout_constraintBottom_toTopOf="@+id/sova"
-            app:layout_constraintEnd_toStartOf="@+id/raze" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <TextView
         android:id="@+id/timer"
         android:layout_width="75dp"
@@ -354,7 +192,7 @@
         android:id="@+id/agent_selected"
         android:layout_width="181dp"
         android:layout_height="398dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:scaleType="centerCrop"
@@ -374,7 +212,9 @@
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
+        android:textAllCaps="false"
         android:textColor="#ECD48D"
+        android:textIsSelectable="false"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/agent_selected"
         app:layout_constraintHorizontal_bias="0.0"
@@ -391,6 +231,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="LEBRONZEJAMESJDSJDKSKDQKDQS"
+        android:textAllCaps="true"
         android:textColor="#ECD48D"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/agent_selected"
@@ -457,5 +298,199 @@
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/me"
         app:layout_constraintTop_toBottomOf="@+id/myname" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="375dp"
+        android:layout_height="157dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="409dp"
+            android:layout_height="163dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="567dp">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/astra"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/astra"
+            app:layout_constraintBottom_toTopOf="@+id/omen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/breach"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/breach"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/phoenix"
+            app:layout_constraintStart_toEndOf="@+id/astra"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/brimstone"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/brimstone"
+            app:layout_constraintBottom_toTopOf="@+id/raze"
+            app:layout_constraintStart_toEndOf="@+id/breach"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/cypher"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/cypher"
+            app:layout_constraintBottom_toTopOf="@+id/reyna"
+            app:layout_constraintStart_toEndOf="@+id/brimstone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/jett"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/jett"
+            app:layout_constraintBottom_toTopOf="@+id/sage"
+            app:layout_constraintStart_toEndOf="@+id/cypher"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/kj"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/kj"
+            app:layout_constraintBottom_toTopOf="@+id/skye"
+            app:layout_constraintStart_toEndOf="@+id/jett" />
+
+        <ImageView
+            android:id="@+id/skye"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="54dp"
+            android:src="@drawable/skye"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sage" />
+
+        <ImageView
+            android:id="@+id/sage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/sage"
+            app:layout_constraintBottom_toTopOf="@+id/kayo"
+            app:layout_constraintStart_toEndOf="@+id/reyna" />
+
+        <ImageView
+            android:id="@+id/reyna"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/reyna"
+            app:layout_constraintBottom_toTopOf="@+id/yoru"
+            app:layout_constraintStart_toEndOf="@+id/raze" />
+
+        <ImageView
+            android:id="@+id/raze"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/raze"
+            app:layout_constraintBottom_toTopOf="@+id/viper"
+            app:layout_constraintStart_toEndOf="@+id/phoenix" />
+
+        <ImageView
+            android:id="@+id/phoenix"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/phoenix"
+            app:layout_constraintBottom_toTopOf="@+id/sova"
+            app:layout_constraintStart_toEndOf="@+id/omen" />
+
+        <ImageView
+            android:id="@+id/omen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="54dp"
+            android:src="@drawable/omen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/sova"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/sova"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/viper" />
+
+        <ImageView
+            android:id="@+id/viper"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/viper"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yoru" />
+
+        <ImageView
+            android:id="@+id/yoru"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/yoru"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/kayo" />
+
+        <ImageView
+            android:id="@+id/kayo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/kayo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

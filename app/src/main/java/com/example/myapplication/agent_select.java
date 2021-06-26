@@ -204,6 +204,13 @@ public class agent_select extends AppCompatActivity {
                 ((Button)findViewById(R.id.lock_in)).setEnabled(false);
             }
         });
+        ((Button)findViewById(R.id.leave)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                auth.LeavePregame(match);
+                finish();
+            }
+        });
 
 
     }

@@ -468,6 +468,27 @@ public class Auth extends AppCompatActivity implements Serializable {
     public String get_Card() {
         return this.card;
     }
+    public void LeavePregame(String match){
+
+        //https://glz-ap-1.ap.a.pvp.net/pregame/v1/matches/{match_id}/quit
+        OkHttpClient client = new OkHttpClient.Builder().build();
+        String url = "https://glz-eu-1.eu.a.pvp.net/pregame/v1/matches/"+match+"/quit";
+        RequestBody body = RequestBody.create("", null);
+        Request request = new Request.Builder().addHeader("Content-Type", "application/json")
+                .addHeader("Authorization", "Bearer " + this.token)
+                .addHeader("X-Riot-Entitlements-JWT", this.ent_toekn)
+                .addHeader("X-Riot-ClientVersion", this.version)
+                .addHeader("X-Riot-ClientPlatform", this.clientPV)
+                .url(url).post(body).build();
+        try (Response response = client.newCall(request).execute()) {
+            Log.d("Bye bye" , response.body().string());
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void LockAgent(String match , String agent) {
         OkHttpClient client = new OkHttpClient.Builder().build();
         String url = "https://glz-eu-1.eu.a.pvp.net/pregame/v1/matches/"+match+"/lock/"+ agent;

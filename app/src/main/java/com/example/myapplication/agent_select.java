@@ -30,6 +30,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class agent_select extends AppCompatActivity {
     private String selectedAgent;
+    private int tries = 0;
     private HashMap<String , Integer> AgentsImages = new HashMap<String, Integer>();
     private String state = "picking";
     private ArrayList<String> AvailableAgents = new ArrayList<String>();
@@ -421,11 +422,16 @@ public class agent_select extends AppCompatActivity {
     private void updateUI(String match , Auth auth) throws JSONException {
         String d = auth.getPregame(match);
         if (d.equals("404")){
-            exec.shutdownNow();
-            finish();
+            if (tries ==3){
+                exec.shutdownNow();
+                finish();
+            }
+            else{
+                tries++;
+            }
         }
         else{
-
+        tries = 0;
         JSONObject data =new JSONObject(d) ;
 
         long secs = data.getLong("PhaseTimeRemainingNS");

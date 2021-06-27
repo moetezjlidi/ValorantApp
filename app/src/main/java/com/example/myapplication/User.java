@@ -66,7 +66,7 @@ public class User extends AppCompatActivity  {
         binding = ActivityUserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mMyApp = (MyApp) this .getApplicationContext() ;
-
+setTheme(R.style.NoActionBar);
         Intent i = getIntent();
         Auth auth = (Auth) i.getSerializableExtra("auth");
         Intent ir=new Intent(this, NotificationService.class);
@@ -179,7 +179,9 @@ public class User extends AppCompatActivity  {
             auth.getAgents();
             Intent i = new Intent(User.this , agent_select.class);
             i.putExtra("auth" , auth);
+            ((Switch)findViewById(R.id.check)).performClick();
             User.this.startActivity(i);
+
 
         }
     }

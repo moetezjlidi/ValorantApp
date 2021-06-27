@@ -47,7 +47,7 @@ import java.util.concurrent.TimeUnit;
 
 public class User extends AppCompatActivity  {
     private Boolean isChecking = false;
-    private ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
+    private ScheduledExecutorService exec ;
     private ActivityUserBinding binding;
     protected MyApp mMyApp ;
     @SuppressLint("SetTextI18n")
@@ -148,6 +148,7 @@ setTheme(R.style.NoActionBar);
                 else{
                     isChecking = true;
                     ((Switch)findViewById(R.id.check)).setText("Check : ON");
+                    exec =  Executors.newSingleThreadScheduledExecutor();
                     exec.scheduleAtFixedRate(() -> {
                         runOnUiThread(new Runnable() {
 

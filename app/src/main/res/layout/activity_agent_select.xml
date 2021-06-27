@@ -321,7 +321,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/astra"
+            android:background="@drawable/astra"
             app:layout_constraintBottom_toTopOf="@+id/omen"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -333,7 +333,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/breach"
+            android:background="@drawable/breach"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/phoenix"
             app:layout_constraintStart_toEndOf="@+id/astra"
@@ -346,7 +346,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/brimstone"
+            android:background="@drawable/brimstone"
             app:layout_constraintBottom_toTopOf="@+id/raze"
             app:layout_constraintStart_toEndOf="@+id/breach"
             app:layout_constraintTop_toTopOf="parent"
@@ -358,7 +358,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/cypher"
+            android:background="@drawable/cypher"
             app:layout_constraintBottom_toTopOf="@+id/reyna"
             app:layout_constraintStart_toEndOf="@+id/brimstone"
             app:layout_constraintTop_toTopOf="parent"
@@ -370,7 +370,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/jett"
+            android:background="@drawable/jett"
             app:layout_constraintBottom_toTopOf="@+id/sage"
             app:layout_constraintStart_toEndOf="@+id/cypher"
             app:layout_constraintTop_toTopOf="parent"
@@ -382,7 +382,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/kj"
+            android:background="@drawable/kj"
             app:layout_constraintBottom_toTopOf="@+id/skye"
             app:layout_constraintStart_toEndOf="@+id/jett" />
 
@@ -393,7 +393,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
             android:layout_marginBottom="54dp"
-            android:src="@drawable/skye"
+            android:background="@drawable/skye"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sage" />
 
@@ -403,7 +403,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/sage"
+            android:background="@drawable/sage"
             app:layout_constraintBottom_toTopOf="@+id/kayo"
             app:layout_constraintStart_toEndOf="@+id/reyna" />
 
@@ -413,7 +413,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/reyna"
+            android:background="@drawable/reyna"
             app:layout_constraintBottom_toTopOf="@+id/yoru"
             app:layout_constraintStart_toEndOf="@+id/raze" />
 
@@ -423,7 +423,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/raze"
+            android:background="@drawable/raze"
             app:layout_constraintBottom_toTopOf="@+id/viper"
             app:layout_constraintStart_toEndOf="@+id/phoenix" />
 
@@ -433,7 +433,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:src="@drawable/phoenix"
+            android:background="@drawable/phoenix"
             app:layout_constraintBottom_toTopOf="@+id/sova"
             app:layout_constraintStart_toEndOf="@+id/omen" />
 
@@ -444,7 +444,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="54dp"
-            android:src="@drawable/omen"
+            android:background="@drawable/omen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -455,7 +455,7 @@
             android:layout_marginEnd="6dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="4dp"
-            android:src="@drawable/sova"
+            android:background="@drawable/sova"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/viper" />
 
@@ -466,7 +466,7 @@
             android:layout_marginEnd="6dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="4dp"
-            android:src="@drawable/viper"
+            android:background="@drawable/viper"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/yoru" />
 
@@ -477,7 +477,7 @@
             android:layout_marginEnd="6dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="4dp"
-            android:src="@drawable/yoru"
+            android:background="@drawable/yoru"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/kayo" />
 
@@ -488,7 +488,7 @@
             android:layout_marginEnd="80dp"
             android:layout_marginRight="80dp"
             android:layout_marginBottom="4dp"
-            android:src="@drawable/kayo"
+            android:background="@drawable/kayo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

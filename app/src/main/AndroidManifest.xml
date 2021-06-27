@@ -15,7 +15,9 @@
         android:name=".MyApp"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:overrideLibrary="jp.wasabeef.blurry">
-        <activity android:name=".agent_select"></activity>
+        <activity android:name=".agent_select"
+            android:noHistory="true"
+            ></activity>
 
         <service
             android:name=".NotificationService"
@@ -49,6 +51,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

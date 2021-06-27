@@ -39,7 +39,7 @@ public class agent_select extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         AvailableAgents.add("5f8d3a7f-467b-97f3-062c-13acf203c006");
         AvailableAgents.add("f94c3b30-42be-e959-889c-5aa313dba261");
         AvailableAgents.add("601dbbe7-43ce-be57-2a40-4abd24953621");

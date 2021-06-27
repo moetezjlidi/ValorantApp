@@ -126,6 +126,7 @@ setTheme(R.style.NoActionBar);
                 Intent i  = new Intent(User.this , Collection.class);
                 i.putExtra("auth" , auth);
                 User.this.startActivity(i);
+
             }
         });
         ((Button)findViewById(R.id.view_contract)).setOnClickListener(new View.OnClickListener() {
@@ -181,7 +182,8 @@ setTheme(R.style.NoActionBar);
             Intent i = new Intent(User.this , agent_select.class);
             i.putExtra("auth" , auth);
             ((Switch)findViewById(R.id.check)).performClick();
-            User.this.startActivity(i);
+            User.this.startActivity(i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+
 
 
         }

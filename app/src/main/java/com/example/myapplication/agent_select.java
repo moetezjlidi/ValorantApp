@@ -334,50 +334,60 @@ public class agent_select extends AppCompatActivity {
         if (!(myagents.contains("5f8d3a7f-467b-97f3-062c-13acf203c006"))){
             ((ImageView)findViewById(R.id.breach)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.breach)).getBackground().setAlpha(51);
+            AvailableAgents.remove("5f8d3a7f-467b-97f3-062c-13acf203c006");
         }
         if (!(myagents.contains("f94c3b30-42be-e959-889c-5aa313dba261"))){
             ((ImageView)findViewById(R.id.raze)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.raze)).getBackground().setAlpha(51);
+            AvailableAgents.remove("f94c3b30-42be-e959-889c-5aa313dba261");
         }
         if (!(myagents.contains("601dbbe7-43ce-be57-2a40-4abd24953621"))){
 
             ((ImageView)findViewById(R.id.kayo)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.kayo)).getBackground().setAlpha(51);
+            AvailableAgents.remove("601dbbe7-43ce-be57-2a40-4abd24953621");
         }
         if (!(myagents.contains("6f2a04ca-43e0-be17-7f36-b3908627744d"))){
 
             ((ImageView)findViewById(R.id.skye)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.skye)).getBackground().setAlpha(51);
+            AvailableAgents.remove("6f2a04ca-43e0-be17-7f36-b3908627744d");
         }
         if (!(myagents.contains("117ed9e3-49f3-6512-3ccf-0cada7e3823b"))){
 
             ((ImageView)findViewById(R.id.cypher)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.cypher)).getBackground().setAlpha(51);
+            AvailableAgents.remove("117ed9e3-49f3-6512-3ccf-0cada7e3823b");
         }
         if (!(myagents.contains("1e58de9c-4950-5125-93e9-a0aee9f98746"))){
 
             ((ImageView)findViewById(R.id.kj)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.kj)).getBackground().setAlpha(51);
+            AvailableAgents.remove("1e58de9c-4950-5125-93e9-a0aee9f98746");
         }
         if (!(myagents.contains("707eab51-4836-f488-046a-cda6bf494859"))){
 
             ((ImageView)findViewById(R.id.viper)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.viper)).getBackground().setAlpha(51);
+            AvailableAgents.remove("707eab51-4836-f488-046a-cda6bf494859");
         }
         if (!(myagents.contains("41fb69c1-4189-7b37-f117-bcaf1e96f1bf"))){
 
             ((ImageView)findViewById(R.id.astra)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.astra)).getBackground().setAlpha(51);
+            AvailableAgents.remove("41fb69c1-4189-7b37-f117-bcaf1e96f1bf");
         }
         if (!(myagents.contains("a3bfb853-43b2-7238-a4f1-ad90e9e46bcc"))){
 
             ((ImageView)findViewById(R.id.reyna)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.reyna)).getBackground().setAlpha(51);
+            AvailableAgents.remove("a3bfb853-43b2-7238-a4f1-ad90e9e46bcc");
         }
         if (!(myagents.contains("8e253930-4c05-31dd-1b6c-968525494517"))){
 
             ((ImageView)findViewById(R.id.omen)).setImageResource(R.drawable.lock_icon_614x460);
             ((ImageView)findViewById(R.id.omen)).getBackground().setAlpha(51);
+            AvailableAgents.remove("8e253930-4c05-31dd-1b6c-968525494517");
         }
 
 
@@ -430,22 +440,43 @@ public class agent_select extends AppCompatActivity {
         String state4 = players.getJSONObject(3).getString("CharacterSelectionState");
         if (state1.equals("locked")){
             ((TextView)findViewById(R.id.state1)).setText("PICKED");
-            AvailableAgents.remove(player1c);
+            try{
+                AvailableAgents.remove(player1c);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
             ((ImageView)findViewById(AgentsImages.get(player1c))).getBackground().setAlpha(51);
         }
         if (state2.equals("locked")){
             ((TextView)findViewById(R.id.state2)).setText("PICKED");
-            AvailableAgents.remove(player2c);
+            try{
+                AvailableAgents.remove(player2c);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+
             ((ImageView)findViewById(AgentsImages.get(player2c))).getBackground().setAlpha(51);
         }
         if (state3.equals("locked")){
             ((TextView)findViewById(R.id.state3)).setText("PICKED");
-            AvailableAgents.remove(player3c);
+            try{
+                AvailableAgents.remove(player3c);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
             ((ImageView)findViewById(AgentsImages.get(player3c))).getBackground().setAlpha(51);
         }
         if (state4.equals("locked")){
             ((TextView)findViewById(R.id.state4)).setText("PICKED");
-            AvailableAgents.remove(player4c);
+            try{
+                AvailableAgents.remove(player4c);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
             ((ImageView)findViewById(AgentsImages.get(player4c))).getBackground().setAlpha(51);
         }
 

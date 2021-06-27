@@ -280,12 +280,15 @@ public class agent_select extends AppCompatActivity {
         ((Button)findViewById(R.id.lock_in)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(AvailableAgents.contains(selectedAgent)){
+                    auth.LockAgent(match , selectedAgent);
+                    ((TextView)findViewById(R.id.mystate)).setText("PICKED");
+                    Picasso.get().load("https://media.valorant-api.com/agents/"+selectedAgent+"/displayicon.png").into((CircleImageView) findViewById(R.id.me));
+                    ((Button)findViewById(R.id.lock_in)).setEnabled(false);
+                    state = "locked";
+                    ((ImageView)findViewById(AgentsImages.get(selectedAgent))).getBackground().setAlpha(51);
+                }
 
-                auth.LockAgent(match , selectedAgent);
-                ((TextView)findViewById(R.id.mystate)).setText("PICKED");
-                Picasso.get().load("https://media.valorant-api.com/agents/"+selectedAgent+"/displayicon.png").into((CircleImageView) findViewById(R.id.me));
-                ((Button)findViewById(R.id.lock_in)).setEnabled(false);
-                state = "locked";
             }
         });
         ((Button)findViewById(R.id.leave)).setOnClickListener(new View.OnClickListener() {

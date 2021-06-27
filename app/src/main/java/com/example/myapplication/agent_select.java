@@ -402,7 +402,15 @@ public class agent_select extends AppCompatActivity {
     }
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void updateUI(String match , Auth auth) throws JSONException {
-        JSONObject data =new JSONObject(auth.getPregame(match)) ;
+        String d = auth.getPregame(match);
+        if (d.equals("404")){
+            exec.shutdownNow();
+            finish();
+        }
+        else{
+
+        JSONObject data =new JSONObject(d) ;
+
         long secs = data.getLong("PhaseTimeRemainingNS");
         long seconds = TimeUnit.SECONDS.
                 convert(secs,
@@ -478,6 +486,7 @@ public class agent_select extends AppCompatActivity {
                 e.printStackTrace();
             }
             ((ImageView)findViewById(AgentsImages.get(player4c))).getBackground().setAlpha(51);
+        }
         }
 
 

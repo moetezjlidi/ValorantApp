@@ -158,9 +158,14 @@ public class Auth extends AppCompatActivity implements Serializable {
                     .addHeader("X-Riot-ClientPlatform", this.clientPV).build();
             try (Response response = client.newCall(request).execute()) {
                 res = response.body().string();
+                if (res.contains("404")){
+                    throw new Exception("Pregame Ended");
+                }
 
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (Exception e) {
+                return "404";
             }
             return res;
 

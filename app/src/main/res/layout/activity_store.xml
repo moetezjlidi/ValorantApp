@@ -327,7 +327,7 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer1_img"
-                        app:srcCompat="@drawable/displayicon" />
+                        app:srcCompat="@drawable/displayicon__1_" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -386,7 +386,7 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer2_img"
-                        app:srcCompat="@drawable/displayicon" />
+                        app:srcCompat="@drawable/displayicon__1_" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -435,7 +435,7 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer3_img"
-                        app:srcCompat="@drawable/displayicon" />
+                        app:srcCompat="@drawable/displayicon__1_" />
 
                     <TextView
                         android:id="@+id/offer3_price"
@@ -504,7 +504,7 @@
                         android:layout_marginBottom="72dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/offer4_img"
-                        app:srcCompat="@drawable/displayicon" />
+                        app:srcCompat="@drawable/displayicon__1_" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

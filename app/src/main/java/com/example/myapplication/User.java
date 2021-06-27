@@ -36,9 +36,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
-@RequiresApi(api = Build.VERSION_CODES.M)
-public class User extends AppCompatActivity  {
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+@RequiresApi(api = Build.VERSION_CODES.M)
+
+public class User extends AppCompatActivity  {
+    private Boolean isChecking = false;
+    private ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
     private ActivityUserBinding binding;
     protected MyApp mMyApp ;
     @SuppressLint("SetTextI18n")
@@ -128,10 +137,51 @@ public class User extends AppCompatActivity  {
             }
         });
 
+        ((Switch)findViewById(R.id.check)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isChecking){
+                    isChecking = false;
+                    exec.shutdownNow();
+                    ((Switch)findViewById(R.id.check)).setText("Check : OFF");
+                }
+                else{
+                    isChecking = true;
+                    ((Switch)findViewById(R.id.check)).setText("Check : ON");
+                    exec.scheduleAtFixedRate(() -> {
+                        runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                try {
+                                    ListenToQueue(auth);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+
+                    }, 1, 1, TimeUnit.SECONDS);
+                }
+            }
+        });
 
 
 
 
+
+    }
+    private void ListenToQueue(Auth auth) throws JSONException {
+        String Match = auth.getPregameMatchId();
+        if (!Match.contains("404")){
+            exec.shutdownNow();
+            String d = auth.getPregame(Match);
+            auth.getAgents();
+            Intent i = new Intent(User.this , agent_select.class);
+            i.putExtra("auth" , auth);
+            User.this.startActivity(i);
+
+        }
     }
     protected void onResume () {
         super .onResume() ;

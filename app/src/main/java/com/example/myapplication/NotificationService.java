@@ -50,7 +50,7 @@ public class NotificationService extends FirebaseMessagingService {
         mp.start();
         manager.notify(123, notification);
         Log.d("Not" , "Done");*/
-        HashMap<String , Integer> maps = new HashMap<String , Integer>();
+        /*HashMap<String , Integer> maps = new HashMap<String , Integer>();
         maps.put("/Game/Maps/Ascent/Ascent" , R.drawable.ascent);
         maps.put("/Game/Maps/Bonsai/Bonsai" , R.drawable.split);
         maps.put("/Game/Maps/Port/Port" , R.drawable.icebox);
@@ -107,7 +107,7 @@ public class NotificationService extends FirebaseMessagingService {
         }
         else{
             Log.d("NO MATCH" , "NOOO");
-        }
+        }*/
 
     }
 }

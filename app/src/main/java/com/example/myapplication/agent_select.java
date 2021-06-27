@@ -256,7 +256,7 @@ public class agent_select extends AppCompatActivity {
                     selectedAgent = "ded3520f-4264-bfed-162d-b080e2abccf9";
                     auth.SelectAgent(match, selectedAgent);
                     Picasso.get().load("https://media.valorant-api.com/agents/" + selectedAgent + "/displayicon.png").into((CircleImageView) findViewById(R.id.me));
-                    Picasso.get().load("https://media.valorant-api.com/agents/" + selectedAgent + "/fullportrait.png").into((ImageView)findViewById(R.id.agent_selected));
+                    Picasso.get().load("https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/fullportrait.png").into((ImageView)findViewById(R.id.agent_selected));
                 }
             }
         });

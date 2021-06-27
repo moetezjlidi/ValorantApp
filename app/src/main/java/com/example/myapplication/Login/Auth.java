@@ -182,7 +182,7 @@ public class Auth extends AppCompatActivity implements Serializable {
             res = new JSONObject(response.body().string()).getString("MatchID");
 
         } catch (IOException | JSONException e) {
-            e.printStackTrace();
+            return "404";
         }
         return res;
     }

@@ -181,6 +181,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <Switch
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="264dp"
+            android:layout_marginRight="264dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/valfont"
+            android:text="Check : off"
+            android:textColor="#FFFFFF"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="365dp"
@@ -277,6 +291,7 @@
                     app:backgroundTint="#1D3043"
                     app:cornerRadius="200dp"
                     tools:visibility="visible" />
+
 
             </LinearLayout>
         </ScrollView>

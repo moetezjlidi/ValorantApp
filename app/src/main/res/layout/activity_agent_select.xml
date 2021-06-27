@@ -312,14 +312,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="409dp"
-            android:layout_height="163dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="567dp">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <ImageView
             android:id="@+id/astra"
             android:layout_width="50dp"
